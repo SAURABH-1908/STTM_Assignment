@@ -1,0 +1,14 @@
+fileVersion: 1
+id: "21"
+mappingDefinitions:
+  SOURCE:
+    database: STTM_ASSIGNMENT
+    schema: RAW_AX
+  TARGET:
+    database: STTM_ASSIGNMENT
+    schema: TESTING
+  WORK:
+    database: STTM_ASSIGNMENT
+    schema: TRANSFORM_UTILITY
+name: Testing
+type: Environment

@@ -1,0 +1,235 @@
+fileVersion: 1
+id: 7cb0cb4f-2a3c-49a9-9ac7-2135b8bd268a
+name: STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: This table serves as a foundational stage in the data pipeline, designed to calculate change hash key for each record in the source table. It generates unique hash keys to detect updates or modifications across records, excluding business key columns. Additionally, it captures the timestamp of when each record first enters the system, enabling precise identification of total time taken for processing till target Object.
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 32be4675-06d6-4781-a213-3f454578fd3b
+          stepCounter: 7cb0cb4f-2a3c-49a9-9ac7-2135b8bd268a
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: RECID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7656af1b-493b-4997-9266-1430d4871f29
+                stepCounter: 8bb77687-aec0-4bf1-8c11-3720e43218bf
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eaffe496-0c6d-4a81-b760-0a3f2c706845
+          stepCounter: 7cb0cb4f-2a3c-49a9-9ac7-2135b8bd268a
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: This column captures a unique hash value generated using the SHA2 algorithm, based on all non-business key attributes. It is used to efficiently identify and track changes to records, ensuring accurate updates in the target Data Store History table.
+        hashDetails:
+          hashAlgorithm: SHA256
+        hashedColumns: []
+        name: REC_CHANGE_HASH
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: |-
+              
+                  SHA2(
+                    NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."ADDRESS" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST(
+                        "LOGISTICSPOSTALADDRESS"."APARTMENT_RU" AS VARCHAR
+                      ),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST(
+                        "LOGISTICSPOSTALADDRESS"."BUILDINGCOMPLIMENT" AS VARCHAR
+                      ),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."BUILDING_RU" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."CITY" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."CITYKANA_JP" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."CITYRECID" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST(
+                        "LOGISTICSPOSTALADDRESS"."COUNTRYREGIONID" AS VARCHAR
+                      ),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."COUNTY" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."DISTRICT" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST(
+                        "LOGISTICSPOSTALADDRESS"."DISTRICTNAME" AS VARCHAR
+                      ),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."FLATID_RU" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."HOUSEID_RU" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."ISPRIVATE" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."LATITUDE" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."LOCATION" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."LONGITUDE" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."MODIFIEDBY" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST(
+                        "LOGISTICSPOSTALADDRESS"."MODIFIEDDATETIME" AS VARCHAR
+                      ),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."PARTITION" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."POSTBOX" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST(
+                        "LOGISTICSPOSTALADDRESS"."PRIVATEFORPARTY" AS VARCHAR
+                      ),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."RECVERSION" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."SEMCONTACT" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."SEMDEFAULT" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST(
+                        "LOGISTICSPOSTALADDRESS"."SEMDELIVERYLEADTIME" AS VARCHAR
+                      ),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."STATE" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."STREET" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."STREETID_RU" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST(
+                        "LOGISTICSPOSTALADDRESS"."STREETKANA_JP" AS VARCHAR
+                      ),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST(
+                        "LOGISTICSPOSTALADDRESS"."STREETNUMBER" AS VARCHAR
+                      ),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."TIMEZONE" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."VALIDFROM" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST(
+                        "LOGISTICSPOSTALADDRESS"."VALIDFROMTZID" AS VARCHAR
+                      ),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."VALIDTO" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."VALIDTOTZID" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST("LOGISTICSPOSTALADDRESS"."ZIPCODE" AS VARCHAR),
+                      'null'
+                    ) || '||' || NVL(
+                      CAST(
+                        "LOGISTICSPOSTALADDRESS"."ZIPCODERECID" AS VARCHAR
+                      ),
+                      'null'
+                    ),
+                    256
+                  ) 
+                
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: adfcf9e9-d773-4dd4-b833-9c770243ac98
+          stepCounter: 7cb0cb4f-2a3c-49a9-9ac7-2135b8bd268a
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: This column captures the timestamp indicating when the record was first introduced into the system, providing a reference point for the initial data flow into the pipeline.
+        keyColumnType: None
+        name: REC_INSERT_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+        systemColumnType: None
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          LOGISTICSPOSTALADDRESS: 8bb77687-aec0-4bf1-8c11-3720e43218bf
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: LOGISTICSPOSTALADDRESS
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'LOGISTICSPOSTALADDRESS') }} "LOGISTICSPOSTALADDRESS"
+        name: STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0
+        noLinkRefs: []
+  name: STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

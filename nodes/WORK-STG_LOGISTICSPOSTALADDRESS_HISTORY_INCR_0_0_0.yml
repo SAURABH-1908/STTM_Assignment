@@ -1,0 +1,127 @@
+fileVersion: 1
+id: 7d1ecf25-541a-4fd3-b826-6507099a76c9
+name: STG_LOGISTICSPOSTALADDRESS_HISTORY_INCR_0_0_0
+operation:
+  config:
+    insertStrategy: UNION
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: |-
+    This table is designed to track and manage incremental changes in the source data, including new, updated, and deleted records. It supports three distinct processing streams: 
+    1.STG_*_HISTORY_INCR_NEW: Captures newly added records
+    2.STG_*_HISTORY_INCR_CHANGE: Captures modifications to existing records
+    3.STG_*_HISTORY_INCR_DELETE: Captures records that have been removed from the source system.
+    This ensures accurate and efficient change management for downstream data processing.
+  isMultisource: true
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2db16b9d-50e6-4ef1-820b-fe9de0c85d8f
+          stepCounter: 7d1ecf25-541a-4fd3-b826-6507099a76c9
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: RECID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 32be4675-06d6-4781-a213-3f454578fd3b
+                stepCounter: 7cb0cb4f-2a3c-49a9-9ac7-2135b8bd268a
+            transform: ""
+          - columnReferences:
+              - columnCounter: 32be4675-06d6-4781-a213-3f454578fd3b
+                stepCounter: 7cb0cb4f-2a3c-49a9-9ac7-2135b8bd268a
+            transform: ""
+          - columnReferences: []
+            transform: "\"DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0\".\"RECID\""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 43d618cb-b60f-41b3-a203-2dd7a475c132
+          stepCounter: 7d1ecf25-541a-4fd3-b826-6507099a76c9
+        config: {}
+        dataType: VARCHAR(10)
+        description: This column specifies the type of operation (e.g., 'NEW', 'CHANGE', 'DELETE') to be performed on the record, indicating whether it is a new addition, an update to an existing record, or a removal from the source system.
+        name: OPERATION_TYPE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: |-
+              
+              'NEW'
+          - columnReferences: []
+            transform: "'CHANGE'"
+          - columnReferences: []
+            transform: "'DELETE'"
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0: 7cb0cb4f-2a3c-49a9-9ac7-2135b8bd268a
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0
+        join:
+          joinCondition: |-
+            FROM {{ ref('WORK', 'STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0') }} "STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0"
+            LEFT JOIN {{ ref_no_link('TARGET', 'DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0') }} "DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0"
+              ON "STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0"."RECID" = "DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0"."RECID"
+             AND "DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0"."SYSTEM_CURRENT_FLAG" = 'Y'
+            WHERE  "DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0"."RECID" IS NULL
+        name: STG_LOGISTICSPOSTALADDRESS_HISTORY_INCR_0_0_0
+        noLinkRefs:
+          - locationName: TARGET
+            nodeName: DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0
+      - aliases:
+          STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0: 7cb0cb4f-2a3c-49a9-9ac7-2135b8bd268a
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0
+        join:
+          joinCondition: |-
+            FROM {{ ref('WORK', 'STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0') }} "STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0"
+            INNER JOIN {{ ref_no_link('TARGET', 'DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0') }} "DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0"
+               ON "STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0"."RECID" = "DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0"."RECID"
+              AND "STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0"."REC_CHANGE_HASH" <> "DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0"."REC_CHANGE_HASH"
+              AND "DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0"."SYSTEM_CURRENT_FLAG" = 'Y'
+        name: STG_LOGISTICSPOSTALADDRESS_HISTORY_INCR_CHANGE
+        noLinkRefs:
+          - locationName: TARGET
+            nodeName: DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0
+      - aliases:
+          DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0: d16c82c5-40fa-4004-ac00-f1f0979f7ace
+          STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0: 7cb0cb4f-2a3c-49a9-9ac7-2135b8bd268a
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0
+        join:
+          joinCondition: |-
+            FROM {{ ref_no_link('TARGET', 'DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0') }} DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0
+            LEFT JOIN {{ ref('WORK', 'STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0') }} "STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0"
+              ON "DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0"."RECID" = "STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0"."RECID"
+            WHERE "DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0"."SYSTEM_CURRENT_FLAG" = 'Y' 
+              AND "STG_LOGISTICSPOSTALADDRESS_HISTORY_HASH_0_0_0"."RECID" IS NULL
+        name: STG_LOGISTICSPOSTALADDRESS_HISTORY_INCR_DELETE
+        noLinkRefs:
+          - locationName: TARGET
+            nodeName: DS_LOGISTICSPOSTALADDRESS_HISTORY_0_0_0
+  name: STG_LOGISTICSPOSTALADDRESS_HISTORY_INCR_0_0_0
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
