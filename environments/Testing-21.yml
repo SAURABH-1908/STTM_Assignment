@@ -6,7 +6,7 @@ mappingDefinitions:
     schema: RAW_AX
   TARGET:
     database: STTM_ASSIGNMENT
-    schema: HISTORY_AX
+    schema: NEW_TEST
   WORK:
     database: STTM_ASSIGNMENT
     schema: TESTING
