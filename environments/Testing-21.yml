@@ -6,9 +6,9 @@ mappingDefinitions:
     schema: RAW_AX
   TARGET:
     database: STTM_ASSIGNMENT
-    schema: TESTING
+    schema: HISTORY_AX
   WORK:
     database: STTM_ASSIGNMENT
-    schema: TRANSFORM_UTILITY
+    schema: TESTING
 name: Testing
 type: Environment
