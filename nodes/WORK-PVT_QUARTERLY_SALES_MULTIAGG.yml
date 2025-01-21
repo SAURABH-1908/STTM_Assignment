@@ -1,0 +1,185 @@
+fileVersion: 1
+id: c3887bc9-0096-4576-b4fa-4a99202ade9f
+name: PVT_QUARTERLY_SALES_MULTIAGG
+operation:
+  config:
+    Colvol1: ""
+    aggfunc:
+      items:
+        - {}
+    aggfunc1:
+      items:
+        - funcname1: MAX
+        - funcname1: MIN
+        - funcname1: AVG
+        - funcname1: SUM
+    defaultval: ""
+    defvalue: false
+    excolval: false
+    exlcol:
+      items:
+        - {}
+    inferPivot: false
+    samKeyColval: false
+    sincol: true
+    subqueryval1: ""
+    tabKeyColumn:
+      items:
+        - keyColTextBox: QUARTER
+    tabValueColumn:
+      items:
+        - valColTextBox: AMOUNT
+    testsEnabled: false
+    trunc: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: cbc28077-f93e-4a2d-b4ee-be869bf719f5
+          stepCounter: c3887bc9-0096-4576-b4fa-4a99202ade9f
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: EMPID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a6248841-11bd-4c69-b501-717175253da1
+                stepCounter: 96c972ba-a1a7-4d31-b324-7fc4f690ac62
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0640b63e-80f8-492e-a639-74cfcbcc0375
+          stepCounter: c3887bc9-0096-4576-b4fa-4a99202ade9f
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: DISCOUNT_PERCENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3260a9b8-b4ca-488f-b8dc-52b38deced77
+                stepCounter: 96c972ba-a1a7-4d31-b324-7fc4f690ac62
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 29c8a0d9-2b51-40c0-831a-6dcbfbfcf1df
+          stepCounter: c3887bc9-0096-4576-b4fa-4a99202ade9f
+        config: {}
+        dataType: VARCHAR(14)
+        defaultValue: ""
+        description: ""
+        name: AGGREGATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 92e0bec1-286e-48c6-b0ac-dde59f3c3f4b
+          stepCounter: c3887bc9-0096-4576-b4fa-4a99202ade9f
+        config: {}
+        dataType: NUMBER(38,6)
+        defaultValue: ""
+        description: ""
+        name: "'2023_Q1'"
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 81921a4d-e571-4951-ac64-5a909ff25dfb
+          stepCounter: c3887bc9-0096-4576-b4fa-4a99202ade9f
+        config: {}
+        dataType: NUMBER(38,6)
+        defaultValue: ""
+        description: ""
+        name: "'2023_Q2'"
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c7690206-ecd4-44be-92f6-3e250e9e091c
+          stepCounter: c3887bc9-0096-4576-b4fa-4a99202ade9f
+        config: {}
+        dataType: NUMBER(38,6)
+        defaultValue: ""
+        description: ""
+        name: "'2023_Q3'"
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3b00cc25-02c6-458f-85d3-4041f4d9169a
+          stepCounter: c3887bc9-0096-4576-b4fa-4a99202ade9f
+        config: {}
+        dataType: NUMBER(38,6)
+        defaultValue: ""
+        description: ""
+        name: "'2023_Q4'"
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: QUARTERLY_SALES
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'QUARTERLY_SALES') }} "QUARTERLY_SALES"
+        name: PVT_QUARTERLY_SALES_MULTIAGG
+        noLinkRefs: []
+  name: PVT_QUARTERLY_SALES_MULTIAGG
+  overrideSQL: false
+  schema: ""
+  sqlType: "11"
+  type: sql
+  version: 1
+type: Node
