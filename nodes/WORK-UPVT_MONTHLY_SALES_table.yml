@@ -4,18 +4,14 @@ name: UPVT_MONTHLY_SALES_table
 operation:
   config:
     includenull: true
-    inferunpivot: true
+    inferunpivot: false
     nameColTextBox: Month
     tabValueColumn:
       items:
         - ColTextBox: JAN
-          valColDropdown: null
         - ColTextBox: FEB
-          valColDropdown: null
         - ColTextBox: MAR
-          valColDropdown: null
         - ColTextBox: APR
-          valColDropdown: null
     testsEnabled: false
     truncateBefore: true
     valColTextBox: Sales
