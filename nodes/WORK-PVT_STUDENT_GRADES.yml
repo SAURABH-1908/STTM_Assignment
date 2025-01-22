@@ -34,7 +34,7 @@ operation:
   description: ""
   isMultisource: false
   locationName: WORK
-  materializationType: transient table
+  materializationType: table
   metadata:
     appliedNodeTests: []
     columns:
