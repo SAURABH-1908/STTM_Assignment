@@ -6,6 +6,6 @@ mappingDefinitions:
     schema: SAMPLE_DATA
   WORK:
     database: PIVOT_PRACTICE
-    schema: WORKTEST
+    schema: WORKTEST_PIVOT
 name: Testing
 type: Environment
