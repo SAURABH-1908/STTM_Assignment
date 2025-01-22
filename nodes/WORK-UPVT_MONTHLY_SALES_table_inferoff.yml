@@ -1,0 +1,130 @@
+fileVersion: 1
+id: 139139f2-2489-4da4-8582-88a5f74287b1
+name: UPVT_MONTHLY_SALES_table_inferoff
+operation:
+  config:
+    includenull: true
+    inferunpivot: false
+    nameColTextBox: Month
+    tabValueColumn:
+      items:
+        - ColTextBox: JAN
+        - ColTextBox: FEB
+        - ColTextBox: MAR
+        - ColTextBox: APR
+    testsEnabled: false
+    truncateBefore: true
+    valColTextBox: Sales
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f333d75b-14fc-477e-92ae-e25e32c6a914
+          stepCounter: 139139f2-2489-4da4-8582-88a5f74287b1
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: EMPID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 74779e99-7ace-4183-a957-2141ab4703b9
+                stepCounter: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2de06237-2358-4317-ba4f-4481291b3e90
+          stepCounter: 139139f2-2489-4da4-8582-88a5f74287b1
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: DEPT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3f9ca0ac-1021-4d9b-9b4e-b1d181f5f2cc
+                stepCounter: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 57c380fa-0879-4f86-bb85-e2e36e32a90a
+          stepCounter: 139139f2-2489-4da4-8582-88a5f74287b1
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: JAN
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c5707f83-d476-4ac4-8951-15c3b23386de
+                stepCounter: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 716b4597-5236-49b8-8078-189a8e0ae5f4
+          stepCounter: 139139f2-2489-4da4-8582-88a5f74287b1
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: FEB
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cc1e464e-2ec8-4ab8-8860-eba68c4ca841
+                stepCounter: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 95ef509e-4c91-4217-b6bc-9bbc81b12a57
+          stepCounter: 139139f2-2489-4da4-8582-88a5f74287b1
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: MAR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f25220b1-7da9-43ef-bbd1-5cd0d7ba9aea
+                stepCounter: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8f9475f8-de20-4d71-b89e-50a80e4b2e17
+          stepCounter: 139139f2-2489-4da4-8582-88a5f74287b1
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: APR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4e208d2e-7e43-4dcb-aa0f-4a0a2e2c968d
+                stepCounter: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: MONTHLY_SALES
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'MONTHLY_SALES') }} "MONTHLY_SALES"
+        name: UPVT_MONTHLY_SALES_table_inferoff
+        noLinkRefs: []
+  name: UPVT_MONTHLY_SALES_table_inferoff
+  overrideSQL: false
+  schema: ""
+  sqlType: "12"
+  type: sql
+  version: 1
+type: Node

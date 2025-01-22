@@ -1,0 +1,134 @@
+fileVersion: 1
+id: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+name: MONTHLY_SALES
+operation:
+  database: ""
+  dataset: ""
+  deployEnabled: true
+  description: ""
+  locationName: SOURCE
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 74779e99-7ace-4183-a957-2141ab4703b9
+          stepCounter: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: EMPID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3f9ca0ac-1021-4d9b-9b4e-b1d181f5f2cc
+          stepCounter: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: DEPT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c5707f83-d476-4ac4-8951-15c3b23386de
+          stepCounter: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: JAN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cc1e464e-2ec8-4ab8-8860-eba68c4ca841
+          stepCounter: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: FEB
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f25220b1-7da9-43ef-bbd1-5cd0d7ba9aea
+          stepCounter: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: MAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4e208d2e-7e43-4dcb-aa0f-4a0a2e2c968d
+          stepCounter: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: APR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    join:
+      joinCondition: FROM {{ ref('SOURCE', 'MONTHLY_SALES') }}
+  name: MONTHLY_SALES
+  schema: ""
+  sqlType: Source
+  table: MONTHLY_SALES
+  type: sourceInput
+  version: 1
+type: Node

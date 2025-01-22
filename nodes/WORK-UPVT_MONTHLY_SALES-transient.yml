@@ -1,0 +1,134 @@
+fileVersion: 1
+id: 26cd286b-37f7-4c13-9c67-ac44639ae233
+name: UPVT_MONTHLY_SALES-transient
+operation:
+  config:
+    includenull: false
+    inferunpivot: true
+    nameColTextBox: Month
+    tabValueColumn:
+      items:
+        - ColTextBox: JAN
+          valColDropdown: null
+        - ColTextBox: FEB
+          valColDropdown: null
+        - ColTextBox: MAR
+          valColDropdown: null
+        - ColTextBox: APR
+          valColDropdown: null
+    testsEnabled: false
+    truncateBefore: true
+    valColTextBox: Sales
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: transient table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a7b9e5de-73ee-4d2b-8515-c22942891ee8
+          stepCounter: 26cd286b-37f7-4c13-9c67-ac44639ae233
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: EMPID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 74779e99-7ace-4183-a957-2141ab4703b9
+                stepCounter: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7d19724f-cc81-421d-a8f5-e58113094ff4
+          stepCounter: 26cd286b-37f7-4c13-9c67-ac44639ae233
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: DEPT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3f9ca0ac-1021-4d9b-9b4e-b1d181f5f2cc
+                stepCounter: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bcf4a28a-e88e-449d-9257-759768fe1003
+          stepCounter: 26cd286b-37f7-4c13-9c67-ac44639ae233
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: JAN
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c5707f83-d476-4ac4-8951-15c3b23386de
+                stepCounter: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2ab87288-9a4e-4f1d-954d-5c6f35a06b8c
+          stepCounter: 26cd286b-37f7-4c13-9c67-ac44639ae233
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: FEB
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cc1e464e-2ec8-4ab8-8860-eba68c4ca841
+                stepCounter: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f77923e6-94b7-4287-8555-8a1769eb5a9d
+          stepCounter: 26cd286b-37f7-4c13-9c67-ac44639ae233
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: MAR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f25220b1-7da9-43ef-bbd1-5cd0d7ba9aea
+                stepCounter: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c36c3314-1a18-4fb0-99b4-a3a9580d61d7
+          stepCounter: 26cd286b-37f7-4c13-9c67-ac44639ae233
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: APR
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4e208d2e-7e43-4dcb-aa0f-4a0a2e2c968d
+                stepCounter: 2cb81193-0a12-4f46-a0c5-b8fe79658a93
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: MONTHLY_SALES
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'MONTHLY_SALES') }} "MONTHLY_SALES"
+        name: UPVT_MONTHLY_SALES-transient
+        noLinkRefs: []
+  name: UPVT_MONTHLY_SALES-transient
+  overrideSQL: false
+  schema: ""
+  sqlType: "12"
+  type: sql
+  version: 1
+type: Node

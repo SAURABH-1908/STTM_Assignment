@@ -1,0 +1,11 @@
+fileVersion: 1
+id: "21"
+mappingDefinitions:
+  SOURCE:
+    database: PIVOT_PRACTICE
+    schema: SAMPLE_DATA
+  WORK:
+    database: PIVOT_PRACTICE
+    schema: WORKTEST_UNPIVOT
+name: Testing
+type: Environment
