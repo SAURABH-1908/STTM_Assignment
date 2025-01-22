@@ -1,0 +1,169 @@
+fileVersion: 1
+id: 44aa1d5f-c73b-445e-962b-e5509a3747ba
+name: PVT_STUDENT_GRADES
+operation:
+  config:
+    Colvol1: ""
+    aggfunc:
+      items:
+        - {}
+    aggfunc1:
+      items:
+        - funcname1: MIN
+        - funcname1: MAX
+    defaultval: ""
+    defvalue: false
+    excolval: false
+    exlcol:
+      items:
+        - {}
+    inferPivot: false
+    samKeyColval: false
+    sincol: true
+    subqueryval1: ""
+    tabKeyColumn:
+      items:
+        - keyColTextBox: TERM
+    tabValueColumn:
+      items:
+        - valColTextBox: GRADE
+    testsEnabled: false
+    trunc: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c16966e-850d-42a2-bbcb-ef976bce50e1
+          stepCounter: 44aa1d5f-c73b-445e-962b-e5509a3747ba
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: STUDENT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0d968730-b8cc-4951-8509-f5e22b86dedf
+                stepCounter: 0fd72779-cb3a-44d1-a41d-45080ea0d048
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 919bc3ed-8b91-41b1-ab09-84153a1b590e
+          stepCounter: 44aa1d5f-c73b-445e-962b-e5509a3747ba
+        config: {}
+        dataType: VARCHAR(13)
+        defaultValue: ""
+        description: ""
+        name: AGGREGATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0f8ea504-d073-40b4-9d40-78d1bdba66ef
+          stepCounter: 44aa1d5f-c73b-445e-962b-e5509a3747ba
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: "'2023_Fall'"
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9c15145e-cafc-4d6a-8b08-3108648c3cc1
+          stepCounter: 44aa1d5f-c73b-445e-962b-e5509a3747ba
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: "'2023_Spring'"
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0199962f-aa01-4eda-95fa-dc8d83b3f4b1
+          stepCounter: 44aa1d5f-c73b-445e-962b-e5509a3747ba
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: "'2023_Summer'"
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 870d164f-f78f-403a-9b72-8abdd17d20fb
+          stepCounter: 44aa1d5f-c73b-445e-962b-e5509a3747ba
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: "'2023_Winter'"
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: STUDENT_GRADES
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'STUDENT_GRADES') }} "STUDENT_GRADES"
+        name: PVT_STUDENT_GRADES
+        noLinkRefs: []
+  name: PVT_STUDENT_GRADES
+  overrideSQL: false
+  schema: ""
+  sqlType: "11"
+  type: sql
+  version: 1
+type: Node
