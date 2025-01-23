@@ -4,14 +4,26 @@ name: UPVT_MONTHLY_SALES_table_inferoff
 operation:
   config:
     includenull: true
-    inferunpivot: false
+    inferunpivot: true
     nameColTextBox: Month
     tabValueColumn:
       items:
         - ColTextBox: JAN
+          valColDropdown:
+            columnCounter: 57c380fa-0879-4f86-bb85-e2e36e32a90a
+            stepCounter: 139139f2-2489-4da4-8582-88a5f74287b1
         - ColTextBox: FEB
+          valColDropdown:
+            columnCounter: 716b4597-5236-49b8-8078-189a8e0ae5f4
+            stepCounter: 139139f2-2489-4da4-8582-88a5f74287b1
         - ColTextBox: MAR
+          valColDropdown:
+            columnCounter: 95ef509e-4c91-4217-b6bc-9bbc81b12a57
+            stepCounter: 139139f2-2489-4da4-8582-88a5f74287b1
         - ColTextBox: APR
+          valColDropdown:
+            columnCounter: 8f9475f8-de20-4d71-b89e-50a80e4b2e17
+            stepCounter: 139139f2-2489-4da4-8582-88a5f74287b1
     testsEnabled: false
     truncateBefore: true
     valColTextBox: Sales
