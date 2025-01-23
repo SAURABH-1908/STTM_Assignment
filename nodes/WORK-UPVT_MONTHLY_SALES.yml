@@ -1,11 +1,11 @@
 fileVersion: 1
-id: 39b7efd0-37a5-4d23-8571-627c62383a7a
-name: UPVT_MONTHLY_SALES_TRIAL
+id: 709a4025-de8b-455e-9240-15f976c33484
+name: UPVT_MONTHLY_SALES
 operation:
   config:
     includenull: true
     inferunpivot: false
-    nameColTextBox: MONTH
+    nameColTextBox: Month
     tabValueColumn:
       items:
         - ColTextBox: JAN
@@ -14,20 +14,20 @@ operation:
         - ColTextBox: APR
     testsEnabled: false
     truncateBefore: true
-    valColTextBox: SALES
+    valColTextBox: Sales
   database: ""
   deployEnabled: true
   description: ""
   isMultisource: false
   locationName: WORK
-  materializationType: transient table
+  materializationType: table
   metadata:
     appliedNodeTests: []
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 1e08632b-638b-4795-b178-f96e01b47f1f
-          stepCounter: 39b7efd0-37a5-4d23-8571-627c62383a7a
+          columnCounter: 8371ae8b-262c-4c51-b2b2-fa74c20e87d4
+          stepCounter: 709a4025-de8b-455e-9240-15f976c33484
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -40,8 +40,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 622319b6-046b-460f-a854-c424e175c81b
-          stepCounter: 39b7efd0-37a5-4d23-8571-627c62383a7a
+          columnCounter: 74e06295-3a79-4da5-860e-625af49e7568
+          stepCounter: 709a4025-de8b-455e-9240-15f976c33484
         config: {}
         dataType: VARCHAR(16777216)
         description: ""
@@ -57,8 +57,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 868f48ed-11c8-409f-8691-125537cbac63
-          stepCounter: 39b7efd0-37a5-4d23-8571-627c62383a7a
+          columnCounter: 109cab3e-6b43-441e-8347-b4b3cf434dfe
+          stepCounter: 709a4025-de8b-455e-9240-15f976c33484
         config: {}
         dataType: VARCHAR(16777216)
         defaultValue: ""
@@ -76,8 +76,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: a6c0365f-ba93-432e-8be0-6186998bc2a9
-          stepCounter: 39b7efd0-37a5-4d23-8571-627c62383a7a
+          columnCounter: cc4ba10d-4056-4d9e-a499-2913a4084d69
+          stepCounter: 709a4025-de8b-455e-9240-15f976c33484
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
@@ -101,9 +101,9 @@ operation:
             nodeName: MONTHLY_SALES
         join:
           joinCondition: FROM {{ ref('SOURCE', 'MONTHLY_SALES') }} "MONTHLY_SALES"
-        name: UPVT_MONTHLY_SALES_TRIAL
+        name: UPVT_MONTHLY_SALES
         noLinkRefs: []
-  name: UPVT_MONTHLY_SALES_TRIAL
+  name: UPVT_MONTHLY_SALES
   overrideSQL: false
   schema: ""
   sqlType: "12"
