@@ -1,6 +1,6 @@
 fileVersion: 1
-id: e41d82cd-6d34-41e3-9a2b-6b9d1065abb9
-name: CT_NATION_foreignkey
+id: 5c01d792-f45d-4f7f-831f-007302cd45ba
+name: CT_NATION_Primarykey_2
 operation:
   config:
     changetracking: false
@@ -18,23 +18,20 @@ operation:
     datretention: ""
     defaultcoallation: ""
     eschemaevol: false
-    foreignk: true
+    foreignk: false
     foreignkeycon:
       items:
-        - foreignkeycol: N_NATIONKEY
-          foreignkeyname: fk_1
-          parentabname: CREATE_OR_ALTER.WORKDEV.CT_NATION_PRIMARYKEY
-        - foreignkeycol: N_REGIONKEY
-          foreignkeyname: fk_2
-          parentabname: CREATE_OR_ALTER.WORKDEV.CT_NATION_PRIMARYKEY
+        - {}
     inlineconst: false
     maxdataretention: ""
     outlineconst: true
-    primary: false
+    primary: true
     primarykeycon:
       items:
-        - {}
-    primarykeyname: PK_1
+        - primarykey:
+            columnCounter: e0a24466-c47c-42b6-a30a-21360b69d89a
+            stepCounter: 5c01d792-f45d-4f7f-831f-007302cd45ba
+    primarykeyname: PK_2
   database: ""
   deployEnabled: true
   description: Nation data as defined by TPC-H
@@ -46,8 +43,8 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 2b796787-b1f1-441f-8e7b-359417203eb3
-          stepCounter: e41d82cd-6d34-41e3-9a2b-6b9d1065abb9
+          columnCounter: e0a24466-c47c-42b6-a30a-21360b69d89a
+          stepCounter: 5c01d792-f45d-4f7f-831f-007302cd45ba
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -60,8 +57,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: f2d20d81-d783-42f9-a243-8466d919632e
-          stepCounter: e41d82cd-6d34-41e3-9a2b-6b9d1065abb9
+          columnCounter: 30e4af77-011d-4527-a240-b5813c07d9ea
+          stepCounter: 5c01d792-f45d-4f7f-831f-007302cd45ba
         config: {}
         dataType: VARCHAR(25)
         description: ""
@@ -74,8 +71,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 5da8287f-3caf-4aac-a8b0-d0f132079a92
-          stepCounter: e41d82cd-6d34-41e3-9a2b-6b9d1065abb9
+          columnCounter: 40192d07-7d31-4eb8-983e-e016a5989a13
+          stepCounter: 5c01d792-f45d-4f7f-831f-007302cd45ba
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -88,8 +85,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: dd76426a-952e-4de4-a245-a1b2035cbc49
-          stepCounter: e41d82cd-6d34-41e3-9a2b-6b9d1065abb9
+          columnCounter: 0ed64bfa-7c8d-4990-9290-176b1e7046a3
+          stepCounter: 5c01d792-f45d-4f7f-831f-007302cd45ba
         config: {}
         dataType: VARCHAR(152)
         description: ""
@@ -111,9 +108,9 @@ operation:
             nodeName: NATION
         join:
           joinCondition: FROM {{ ref('SOURCE', 'NATION') }} "NATION"
-        name: CT_NATION_foreignkey
+        name: CT_NATION_Primarykey_2
         noLinkRefs: []
-  name: CT_NATION_foreignkey
+  name: CT_NATION_Primarykey_2
   overrideSQL: false
   schema: ""
   sqlType: "13"
