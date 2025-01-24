@@ -1,0 +1,103 @@
+fileVersion: 1
+id: d0cb42f7-d4e0-4fb1-84e0-0ff9eb8330a1
+name: CT_REGION_data_retention
+operation:
+  config:
+    changetracking: false
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    constraintsspec:
+      items:
+        - {}
+    datretention: "2"
+    defaultcoallation: ""
+    eschemaevol: false
+    foreignk: false
+    foreignkeycon:
+      items:
+        - {}
+    inlineconst: false
+    maxdataretention: ""
+    outlineconst: false
+    primary: false
+    primarykeycon:
+      items:
+        - {}
+    primarykeyname: ""
+  database: ""
+  deployEnabled: true
+  description: Region data as defined by TPC-H
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 56c42563-0117-4fc1-a6bc-d5298503f060
+          stepCounter: d0cb42f7-d4e0-4fb1-84e0-0ff9eb8330a1
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: R_REGIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 02045bb0-46cc-4376-b596-9173617febb8
+                stepCounter: e32dc499-1190-4a3c-a950-6d90178933c8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 660633cb-22eb-40fd-9c0e-b5aa72b857cc
+          stepCounter: d0cb42f7-d4e0-4fb1-84e0-0ff9eb8330a1
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: R_NAME
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b9810897-91f7-4a26-9954-7c2a93745322
+                stepCounter: e32dc499-1190-4a3c-a950-6d90178933c8
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3342677b-ee04-4cf7-befe-cb6312688ab9
+          stepCounter: d0cb42f7-d4e0-4fb1-84e0-0ff9eb8330a1
+        config: {}
+        dataType: VARCHAR(152)
+        description: ""
+        name: R_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fdb8d404-0afa-4ac4-ba38-6600a07f61d7
+                stepCounter: e32dc499-1190-4a3c-a950-6d90178933c8
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: REGION
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'REGION') }} "REGION"
+        name: CT_REGION_data_retention
+        noLinkRefs: []
+  name: CT_REGION_data_retention
+  overrideSQL: false
+  schema: ""
+  sqlType: "13"
+  type: sql
+  version: 1
+type: Node

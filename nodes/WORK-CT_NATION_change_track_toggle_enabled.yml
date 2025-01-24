@@ -1,0 +1,117 @@
+fileVersion: 1
+id: d7d4670e-9a06-41b9-8a2a-973a7c264252
+name: CT_NATION_change_track_toggle_enabled
+operation:
+  config:
+    changetracking: true
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    constraintsspec:
+      items:
+        - {}
+    datretention: ""
+    defaultcoallation: ""
+    eschemaevol: true
+    foreignk: false
+    foreignkeycon:
+      items:
+        - {}
+    inlineconst: false
+    maxdataretention: ""
+    outlineconst: false
+    primary: false
+    primarykeycon:
+      items:
+        - {}
+    primarykeyname: ""
+  database: ""
+  deployEnabled: true
+  description: Nation data as defined by TPC-H
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: df2c0aa5-9239-4812-960e-f5582d666694
+          stepCounter: d7d4670e-9a06-41b9-8a2a-973a7c264252
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: N_NATIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3639f318-fc4d-4845-b59c-fdbe5532954b
+                stepCounter: 95d33b20-8c91-41ba-aa89-ecfce30fe54c
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: be5cb492-4e30-47eb-8247-92e417d0313a
+          stepCounter: d7d4670e-9a06-41b9-8a2a-973a7c264252
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: N_NAME
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 56ff789f-d033-4a4c-a441-88d38e96093e
+                stepCounter: 95d33b20-8c91-41ba-aa89-ecfce30fe54c
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7950e0f6-716a-4b14-be42-c9e8fb0afd31
+          stepCounter: d7d4670e-9a06-41b9-8a2a-973a7c264252
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: N_REGIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1eb04ecb-c473-4693-9e90-f7cb5c288efe
+                stepCounter: 95d33b20-8c91-41ba-aa89-ecfce30fe54c
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 00594ed3-fd82-46bb-817a-fbeed3f5b32e
+          stepCounter: d7d4670e-9a06-41b9-8a2a-973a7c264252
+        config: {}
+        dataType: VARCHAR(152)
+        description: ""
+        name: N_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e62a5c14-71f9-4cc4-a3b0-b972b888ea60
+                stepCounter: 95d33b20-8c91-41ba-aa89-ecfce30fe54c
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: NATION
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'NATION') }} "NATION"
+        name: CT_NATION_change_track_toggle_enabled
+        noLinkRefs: []
+  name: CT_NATION_change_track_toggle_enabled
+  overrideSQL: false
+  schema: ""
+  sqlType: "13"
+  type: sql
+  version: 1
+type: Node
