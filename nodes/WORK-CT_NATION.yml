@@ -11,9 +11,9 @@ operation:
     clusterKeyConfigExpressions:
       items:
         - columnNameExpressions:
-            columnCounter: d758d1d1-4571-4f7c-8d03-6fce9596f4c1
+            columnCounter: ad3696a3-7000-425d-bba8-85601896321f
             stepCounter: 8fea5d30-c5c1-44ee-bd36-ddb9c9f5854d
-          sqlExpression: trunc(N_REGIONKEY, -5)
+          sqlExpression: trunc(N_NATIONKEY, -5)
     clusterKeyExpressions: true
     constraintsspec:
       items:
@@ -68,20 +68,6 @@ operation:
         sourceColumnReferences:
           - columnReferences:
               - columnCounter: 56ff789f-d033-4a4c-a441-88d38e96093e
-                stepCounter: 95d33b20-8c91-41ba-aa89-ecfce30fe54c
-            transform: ""
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: d758d1d1-4571-4f7c-8d03-6fce9596f4c1
-          stepCounter: 8fea5d30-c5c1-44ee-bd36-ddb9c9f5854d
-        config: {}
-        dataType: NUMBER(38,0)
-        description: ""
-        name: N_REGIONKEY
-        nullable: false
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 1eb04ecb-c473-4693-9e90-f7cb5c288efe
                 stepCounter: 95d33b20-8c91-41ba-aa89-ecfce30fe54c
             transform: ""
       - acceptedValues:
