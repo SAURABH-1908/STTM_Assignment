@@ -84,20 +84,26 @@ operation:
               - columnCounter: 1eb04ecb-c473-4693-9e90-f7cb5c288efe
                 stepCounter: 95d33b20-8c91-41ba-aa89-ecfce30fe54c
             transform: ""
-      - appliedColumnTests: {}
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
         columnReference:
-          columnCounter: db33a37b-d465-4956-9cd7-ee95f4f94b38
+          columnCounter: 2f8f8d55-d51b-4f68-b84d-87500f59ffc6
           stepCounter: 8fea5d30-c5c1-44ee-bd36-ddb9c9f5854d
         config: {}
-        dataType: VARCHAR(152)
+        dataType: VARCHAR(40)
+        defaultValue: ""
         description: ""
-        name: N_COMMENT
+        keyColumnType: None
+        name: N_SURNAME
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: e62a5c14-71f9-4cc4-a3b0-b972b888ea60
+              - columnCounter: 56ff789f-d033-4a4c-a441-88d38e96093e
                 stepCounter: 95d33b20-8c91-41ba-aa89-ecfce30fe54c
             transform: ""
+        systemColumnType: None
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
