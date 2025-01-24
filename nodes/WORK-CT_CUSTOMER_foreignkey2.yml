@@ -24,6 +24,9 @@ operation:
         - foreignkeycol: C_NATIONKEY
           foreignkeyname: fk_1
           parentabname: CREATE_OR_ALTER.WORKDEV.CT_CUSTOMER_PRIMARYKEY
+        - foreignkeycol: C_CUSTKEY
+          foreignkeyname: fk_2
+          parentabname: CREATE_OR_ALTER.WORKDEV.CT_CUSTOMER_PRIMARYKEY
     inlineconst: false
     maxdataretention: ""
     outlineconst: true
