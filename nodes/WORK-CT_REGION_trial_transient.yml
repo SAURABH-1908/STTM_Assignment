@@ -3,18 +3,15 @@ id: 8f9489b4-ebe9-44a7-bd2b-c54ee9066e0b
 name: CT_REGION_trial_transient
 operation:
   config:
-    changetracking: false
-    clusterKey: true
+    changetracking: true
+    clusterKey: false
     clusterKeyConfig:
       items:
         - {}
     clusterKeyConfigExpressions:
       items:
-        - columnNameExpressions:
-            columnCounter: c571b698-5d2e-4c44-ae27-50e6410175a0
-            stepCounter: 8f9489b4-ebe9-44a7-bd2b-c54ee9066e0b
-          sqlExpression: trunc(R_REGIONKEY, -5)
-    clusterKeyExpressions: true
+        - {}
+    clusterKeyExpressions: false
     constraintsspec:
       items:
         - {}

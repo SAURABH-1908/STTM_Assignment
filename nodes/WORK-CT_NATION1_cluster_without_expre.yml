@@ -8,7 +8,7 @@ operation:
     clusterKeyConfig:
       items:
         - columnName:
-            columnCounter: 4accb589-54fa-44bf-9d14-4b54d2fce204
+            columnCounter: c766717c-fa8c-4e6d-a84d-863de26b0867
             stepCounter: d3f8025a-6775-4694-a70e-da6a9d1c65a2
     clusterKeyConfigExpressions:
       items:
