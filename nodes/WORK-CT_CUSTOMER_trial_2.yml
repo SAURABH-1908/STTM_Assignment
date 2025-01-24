@@ -32,10 +32,10 @@ operation:
     primarykeyname: ""
   database: ""
   deployEnabled: true
-  description: Customer data as defined by TPC-H
+  description: Customer data (SAMPLE_DATA)
   isMultisource: false
   locationName: WORK
-  materializationType: transient table
+  materializationType: table
   metadata:
     appliedNodeTests: []
     columns:
@@ -59,7 +59,7 @@ operation:
           stepCounter: db35a7c1-e28a-4050-97c7-4d9cebf5cec6
         config: {}
         dataType: VARCHAR(25)
-        description: ""
+        description: "Start with Your Name "
         name: C_NAME
         nullable: false
         sourceColumnReferences:
@@ -73,7 +73,7 @@ operation:
           stepCounter: db35a7c1-e28a-4050-97c7-4d9cebf5cec6
         config: {}
         dataType: VARCHAR(40)
-        description: ""
+        description: Pin code should be Included
         name: C_ADDRESS
         nullable: false
         sourceColumnReferences:
@@ -101,7 +101,7 @@ operation:
           stepCounter: db35a7c1-e28a-4050-97c7-4d9cebf5cec6
         config: {}
         dataType: VARCHAR(15)
-        description: ""
+        description: The phone number should not be greater than 10 digits
         name: C_PHONE_NUMBER
         nullable: false
         sourceColumnReferences:
