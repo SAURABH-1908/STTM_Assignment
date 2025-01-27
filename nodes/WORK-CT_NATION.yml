@@ -32,9 +32,7 @@ operation:
     primarykeyname: ""
   database: ""
   deployEnabled: true
-  description: |-
-    Nation data 
-    (sample)
+  description: Nation data
   isMultisource: false
   locationName: WORK
   materializationType: table
