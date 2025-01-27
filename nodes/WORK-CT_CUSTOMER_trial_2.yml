@@ -123,34 +123,6 @@ operation:
               - columnCounter: a3a4154d-d60f-491a-90fe-fe5cb0fe762e
                 stepCounter: 4d258ecf-087e-4434-a131-93368097d328
             transform: ""
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: d3a0c017-dafa-4fe8-b05e-56929aeb2a54
-          stepCounter: db35a7c1-e28a-4050-97c7-4d9cebf5cec6
-        config: {}
-        dataType: VARCHAR(10)
-        description: ""
-        name: C_MKTSEGMENT
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 5f55631d-9800-4412-94c0-f1bbc9f1f5c5
-                stepCounter: 4d258ecf-087e-4434-a131-93368097d328
-            transform: ""
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: a04605a7-6c5c-45a4-9bfd-38ea7d16bc9b
-          stepCounter: db35a7c1-e28a-4050-97c7-4d9cebf5cec6
-        config: {}
-        dataType: VARCHAR(117)
-        description: ""
-        name: C_COMMENT
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 39ab769d-82df-489c-b110-b814a437ecc1
-                stepCounter: 4d258ecf-087e-4434-a131-93368097d328
-            transform: ""
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
