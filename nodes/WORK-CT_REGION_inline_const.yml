@@ -38,7 +38,7 @@ operation:
   description: Region data as defined by TPC-H
   isMultisource: false
   locationName: WORK
-  materializationType: table
+  materializationType: transient table
   metadata:
     appliedNodeTests: []
     columns:
