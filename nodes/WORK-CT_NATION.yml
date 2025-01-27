@@ -32,7 +32,9 @@ operation:
     primarykeyname: ""
   database: ""
   deployEnabled: true
-  description: Nation data as defined by TPC-H
+  description: |-
+    Nation data 
+    (sample)
   isMultisource: false
   locationName: WORK
   materializationType: table
