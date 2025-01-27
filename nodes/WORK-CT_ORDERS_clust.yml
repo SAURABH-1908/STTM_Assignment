@@ -18,15 +18,15 @@ operation:
     constraintsspec:
       items:
         - {}
-    datretention: ""
-    defaultcoallation: ""
+    datretention: "2"
+    defaultcoallation: "'de'"
     eschemaevol: false
     foreignk: false
     foreignkeycon:
       items:
         - {}
     inlineconst: false
-    maxdataretention: ""
+    maxdataretention: "2"
     outlineconst: false
     primary: false
     primarykeycon:

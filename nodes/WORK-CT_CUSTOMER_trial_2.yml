@@ -24,7 +24,7 @@ operation:
         - {}
     inlineconst: false
     maxdataretention: ""
-    outlineconst: true
+    outlineconst: false
     primary: false
     primarykeycon:
       items:
