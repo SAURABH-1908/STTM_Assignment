@@ -1,6 +1,6 @@
 fileVersion: 1
 id: 2fbadc01-7106-4c2e-ba16-621fda116150
-name: CT_ORDERS_CHANGEE_NAME
+name: CT_ORDERS_CHANGE_NAME_trial
 operation:
   config:
     changetracking: false
@@ -178,9 +178,9 @@ operation:
             nodeName: ORDERS
         join:
           joinCondition: FROM {{ ref('SOURCE', 'ORDERS') }} "ORDERS"
-        name: CT_ORDERS_CHANGEE_NAME
+        name: CT_ORDERS_CHANGE_NAME_trial
         noLinkRefs: []
-  name: CT_ORDERS_CHANGEE_NAME
+  name: CT_ORDERS_CHANGE_NAME_trial
   overrideSQL: false
   schema: ""
   sqlType: "13"
