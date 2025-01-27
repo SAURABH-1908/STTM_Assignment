@@ -11,7 +11,7 @@ operation:
     clusterKeyConfigExpressions:
       items:
         - {}
-    clusterKeyExpressions: true
+    clusterKeyExpressions: false
     constraintsspec:
       items:
         - {}
@@ -35,7 +35,7 @@ operation:
   description: Nation data
   isMultisource: false
   locationName: WORK
-  materializationType: table
+  materializationType: transient table
   metadata:
     appliedNodeTests: []
     columns:
