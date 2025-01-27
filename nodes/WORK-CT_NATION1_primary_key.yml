@@ -1,6 +1,6 @@
 fileVersion: 1
-id: 2abb7ae8-1820-4353-b6e3-2eddfabd7398
-name: CT_NATION_PRIMARYKEY
+id: d9e4326f-1aa0-4bce-92a7-f46731e7924e
+name: CT_NATION1_primary_key
 operation:
   config:
     changetracking: false
@@ -25,10 +25,12 @@ operation:
     inlineconst: false
     maxdataretention: ""
     outlineconst: true
-    primary: false
+    primary: true
     primarykeycon:
       items:
-        - {}
+        - primarykey:
+            columnCounter: ae46a219-fd3b-4be6-b29b-179d76e417b4
+            stepCounter: d9e4326f-1aa0-4bce-92a7-f46731e7924e
     primarykeyname: PK_1
   database: ""
   deployEnabled: true
@@ -41,8 +43,8 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 176bd332-38bd-4aa6-9a4c-f1304052e36f
-          stepCounter: 2abb7ae8-1820-4353-b6e3-2eddfabd7398
+          columnCounter: ae46a219-fd3b-4be6-b29b-179d76e417b4
+          stepCounter: d9e4326f-1aa0-4bce-92a7-f46731e7924e
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -55,8 +57,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 08a74fd9-eb6e-4e34-b85a-0ce12b964a2e
-          stepCounter: 2abb7ae8-1820-4353-b6e3-2eddfabd7398
+          columnCounter: de4c24ef-7bd0-4263-aeda-4cc2f570163b
+          stepCounter: d9e4326f-1aa0-4bce-92a7-f46731e7924e
         config: {}
         dataType: VARCHAR(25)
         description: ""
@@ -69,8 +71,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 50ca62db-ce4d-4300-9a3a-174181aced93
-          stepCounter: 2abb7ae8-1820-4353-b6e3-2eddfabd7398
+          columnCounter: e17f3ee0-a9ac-4717-bbb2-21ca9b907336
+          stepCounter: d9e4326f-1aa0-4bce-92a7-f46731e7924e
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -83,8 +85,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: a9214f45-fdcb-4ea8-802a-55c918d65476
-          stepCounter: 2abb7ae8-1820-4353-b6e3-2eddfabd7398
+          columnCounter: c69c1763-5ce4-40f6-9821-c219bd5aa98a
+          stepCounter: d9e4326f-1aa0-4bce-92a7-f46731e7924e
         config: {}
         dataType: VARCHAR(152)
         description: ""
@@ -106,9 +108,9 @@ operation:
             nodeName: NATION
         join:
           joinCondition: FROM {{ ref('SOURCE', 'NATION') }} "NATION"
-        name: CT_NATION_PRIMARYKEY
+        name: CT_NATION1_primary_key
         noLinkRefs: []
-  name: CT_NATION_PRIMARYKEY
+  name: CT_NATION1_primary_key
   overrideSQL: false
   schema: ""
   sqlType: "13"
