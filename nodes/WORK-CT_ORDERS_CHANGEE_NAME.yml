@@ -32,7 +32,9 @@ operation:
     primarykeyname: ""
   database: ""
   deployEnabled: true
-  description: Orders data as defined by TPC-H
+  description: |-
+    Orders data 
+    (sample in snowflake)
   isMultisource: false
   locationName: WORK
   materializationType: table

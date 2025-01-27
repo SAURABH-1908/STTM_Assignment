@@ -4,16 +4,13 @@ name: CT_NATION
 operation:
   config:
     changetracking: false
-    clusterKey: true
+    clusterKey: false
     clusterKeyConfig:
       items:
         - {}
     clusterKeyConfigExpressions:
       items:
-        - columnNameExpressions:
-            columnCounter: ad3696a3-7000-425d-bba8-85601896321f
-            stepCounter: 8fea5d30-c5c1-44ee-bd36-ddb9c9f5854d
-          sqlExpression: trunc(N_NATIONKEY, -5)
+        - {}
     clusterKeyExpressions: true
     constraintsspec:
       items:
@@ -90,6 +87,71 @@ operation:
                 stepCounter: 95d33b20-8c91-41ba-aa89-ecfce30fe54c
             transform: ""
         systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 123bc4cf-377b-4a7e-ba83-e84dac6382cc
+          stepCounter: 8fea5d30-c5c1-44ee-bd36-ddb9c9f5854d
+        config: {}
+        dataType: VARCHAR(40)
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: N_MIDDLENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: ""
+        systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f2ad965f-bdcb-408f-9e56-c64eb01b7c0d
+          stepCounter: 8fea5d30-c5c1-44ee-bd36-ddb9c9f5854d
+        config: {}
+        dataType: VARCHAR(40)
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: N_FULLNAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: ""
+        systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 48b7e599-9b75-46c9-8ef6-3d4f83e8a790
+          stepCounter: 8fea5d30-c5c1-44ee-bd36-ddb9c9f5854d
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: SHA256
+        hashedColumns:
+          - columnCounter: 98bf7764-acb8-4a1f-9450-2addc289020a
+            stepCounter: 8fea5d30-c5c1-44ee-bd36-ddb9c9f5854d
+          - columnCounter: 2f8f8d55-d51b-4f68-b84d-87500f59ffc6
+            stepCounter: 8fea5d30-c5c1-44ee-bd36-ddb9c9f5854d
+          - columnCounter: 123bc4cf-377b-4a7e-ba83-e84dac6382cc
+            stepCounter: 8fea5d30-c5c1-44ee-bd36-ddb9c9f5854d
+          - columnCounter: f2ad965f-bdcb-408f-9e56-c64eb01b7c0d
+            stepCounter: 8fea5d30-c5c1-44ee-bd36-ddb9c9f5854d
+        name: GH
+        nullable: true
+        sourceColumnReferences: []
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
