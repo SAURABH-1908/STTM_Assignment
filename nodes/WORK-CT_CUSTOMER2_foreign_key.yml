@@ -1,6 +1,6 @@
 fileVersion: 1
-id: 35ad0c65-20d4-4296-8445-5147a8629940
-name: CT_CUSTOMER_foreignkey2
+id: 9c60641a-7baf-450f-91d8-ae37c2a36614
+name: CT_CUSTOMER2_foreign_key
 operation:
   config:
     changetracking: false
@@ -18,11 +18,12 @@ operation:
     datretention: ""
     defaultcoallation: ""
     eschemaevol: false
-    foreignk: false
+    foreignk: true
     foreignkeycon:
       items:
-        - {}
-        - {}
+        - foreignkeycol: C_NATIONKEY
+          foreignkeyname: fk_1
+          parentabname: CREATE_OR_ALTER.WORKDEV.CT_CUSTOMER_PRIMARYKEY
     inlineconst: false
     maxdataretention: ""
     outlineconst: true
@@ -42,8 +43,8 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: c57500fb-0746-454a-b4e7-8cbe150663f4
-          stepCounter: 35ad0c65-20d4-4296-8445-5147a8629940
+          columnCounter: 92a74b61-9909-4247-afcc-7c96ca64e3c8
+          stepCounter: 9c60641a-7baf-450f-91d8-ae37c2a36614
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -56,8 +57,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 58546a9d-53eb-4db1-983a-f1f51c18aa2b
-          stepCounter: 35ad0c65-20d4-4296-8445-5147a8629940
+          columnCounter: a0b8a2c9-add4-4d69-9408-cb4b758833c8
+          stepCounter: 9c60641a-7baf-450f-91d8-ae37c2a36614
         config: {}
         dataType: VARCHAR(25)
         description: ""
@@ -70,8 +71,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: ad41eccd-4bbc-445b-ac61-02c381601cd7
-          stepCounter: 35ad0c65-20d4-4296-8445-5147a8629940
+          columnCounter: 091d6511-408f-46e1-8728-2313278654f5
+          stepCounter: 9c60641a-7baf-450f-91d8-ae37c2a36614
         config: {}
         dataType: VARCHAR(40)
         description: ""
@@ -84,8 +85,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 4b840d20-5b0e-40d6-a39e-544a383e324f
-          stepCounter: 35ad0c65-20d4-4296-8445-5147a8629940
+          columnCounter: 5c9b417f-e567-412f-89e5-acf9506e70f4
+          stepCounter: 9c60641a-7baf-450f-91d8-ae37c2a36614
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -98,8 +99,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 92b40272-aa7d-4acf-8890-6dea61088707
-          stepCounter: 35ad0c65-20d4-4296-8445-5147a8629940
+          columnCounter: e7c41425-da31-4cf2-9405-237dbfd08e0e
+          stepCounter: 9c60641a-7baf-450f-91d8-ae37c2a36614
         config: {}
         dataType: VARCHAR(15)
         description: ""
@@ -112,8 +113,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 005fd495-021e-4656-9393-01a648aaee7b
-          stepCounter: 35ad0c65-20d4-4296-8445-5147a8629940
+          columnCounter: f3ecf28b-bd90-4270-9968-3710209beb40
+          stepCounter: 9c60641a-7baf-450f-91d8-ae37c2a36614
         config: {}
         dataType: NUMBER(12,2)
         description: ""
@@ -126,8 +127,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: d87f2245-d0d8-414d-9963-3cf30cc6a965
-          stepCounter: 35ad0c65-20d4-4296-8445-5147a8629940
+          columnCounter: 1f2bbfff-df9d-48ba-8afb-0f3d6f1f19c9
+          stepCounter: 9c60641a-7baf-450f-91d8-ae37c2a36614
         config: {}
         dataType: VARCHAR(10)
         description: ""
@@ -140,8 +141,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 61a6c363-a984-4e1d-a19f-aee8fcbcd339
-          stepCounter: 35ad0c65-20d4-4296-8445-5147a8629940
+          columnCounter: 547eebdb-7e0b-4a7c-89bf-7c2fa01d50c1
+          stepCounter: 9c60641a-7baf-450f-91d8-ae37c2a36614
         config: {}
         dataType: VARCHAR(117)
         description: ""
@@ -163,9 +164,9 @@ operation:
             nodeName: CUSTOMER
         join:
           joinCondition: FROM {{ ref('SOURCE', 'CUSTOMER') }} "CUSTOMER"
-        name: CT_CUSTOMER_foreignkey2
+        name: CT_CUSTOMER2_foreign_key
         noLinkRefs: []
-  name: CT_CUSTOMER_foreignkey2
+  name: CT_CUSTOMER2_foreign_key
   overrideSQL: false
   schema: ""
   sqlType: "13"
