@@ -3,7 +3,7 @@ id: db35a7c1-e28a-4050-97c7-4d9cebf5cec6
 name: CT_CUSTOMER_trial_2
 operation:
   config:
-    changetracking: false
+    changetracking: true
     clusterKey: false
     clusterKeyConfig:
       items:

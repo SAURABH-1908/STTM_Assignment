@@ -3,7 +3,7 @@ id: d7d4670e-9a06-41b9-8a2a-973a7c264252
 name: CT_NATION_change_track_toggle_enabled
 operation:
   config:
-    changetracking: true
+    changetracking: false
     clusterKey: false
     clusterKeyConfig:
       items:
@@ -17,7 +17,7 @@ operation:
         - {}
     datretention: ""
     defaultcoallation: ""
-    eschemaevol: true
+    eschemaevol: false
     foreignk: false
     foreignkeycon:
       items:
