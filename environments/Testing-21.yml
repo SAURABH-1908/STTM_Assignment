@@ -1,0 +1,11 @@
+fileVersion: 1
+id: "21"
+mappingDefinitions:
+  SOURCE:
+    database: DEMO_SNOWFLAKE_DOCUMENT_AI_DB
+    schema: DEMO_SNOWFLAKE_DOCUMENT_AI_SCHEMA
+  WORK:
+    database: DEMO_SNOWFLAKE_DOCUMENT_AI_DB
+    schema: WORKTEST
+name: Testing
+type: Environment

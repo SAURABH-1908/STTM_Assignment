@@ -1,0 +1,115 @@
+fileVersion: 1
+id: 865ce4a0-2d84-41aa-9f96-5f701baf1f0f
+name: SNOWFLAKE_DOC_REVIEWS
+operation:
+  database: ""
+  dataset: ""
+  deployEnabled: true
+  description: ""
+  locationName: SOURCE
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e5d9499c-0cdf-43f3-9664-0c4164d45ca3
+          stepCounter: 865ce4a0-2d84-41aa-9f96-5f701baf1f0f
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: FILE_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f1d4b94e-7a5c-486e-b84c-4c70a9670e49
+          stepCounter: 865ce4a0-2d84-41aa-9f96-5f701baf1f0f
+        config: {}
+        dataType: VARIANT
+        defaultValue: ""
+        description: ""
+        name: FILE_SIZE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8eb28e2b-12b9-4e1f-be75-51aece30464f
+          stepCounter: 865ce4a0-2d84-41aa-9f96-5f701baf1f0f
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: LAST_MODIFIED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dbe702ec-64b4-4ac9-93e5-3acffabf2662
+          stepCounter: 865ce4a0-2d84-41aa-9f96-5f701baf1f0f
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: SNOWFLAKE_FILE_URL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 02ea96bf-9d8a-4e5d-8337-2b8978da99ff
+          stepCounter: 865ce4a0-2d84-41aa-9f96-5f701baf1f0f
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: JSON_CONTENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    join:
+      joinCondition: FROM {{ ref('SOURCE', 'SNOWFLAKE_DOC_REVIEWS') }}
+  name: SNOWFLAKE_DOC_REVIEWS
+  schema: ""
+  sqlType: Source
+  table: SNOWFLAKE_DOC_REVIEWS
+  type: sourceInput
+  version: 1
+type: Node

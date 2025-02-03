@@ -1,0 +1,172 @@
+fileVersion: 1
+id: 96784efa-4162-4ab1-8786-8c703986d8c3
+name: SNOWFLAKE_STRUCTURED_DATA
+operation:
+  database: ""
+  dataset: ""
+  deployEnabled: true
+  description: ""
+  locationName: SOURCE
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9321e150-8c4a-46d7-8200-7f639a80b488
+          stepCounter: 96784efa-4162-4ab1-8786-8c703986d8c3
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: FILE_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ec64ab8d-fbfd-4a49-81af-d111cda929e3
+          stepCounter: 96784efa-4162-4ab1-8786-8c703986d8c3
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: FILE_SIZE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ec2ae870-f385-4280-aa51-16731508ad77
+          stepCounter: 96784efa-4162-4ab1-8786-8c703986d8c3
+        config: {}
+        dataType: TIMESTAMP_TZ(3)
+        defaultValue: ""
+        description: ""
+        name: LAST_MODIFIED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 44a1bb8b-000f-4bce-a34d-f684b5a97434
+          stepCounter: 96784efa-4162-4ab1-8786-8c703986d8c3
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: SNOWFLAKE_FILE_URL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: adb081e4-a67b-460e-92f7-fe96c47bd677
+          stepCounter: 96784efa-4162-4ab1-8786-8c703986d8c3
+        config: {}
+        dataType: FLOAT
+        defaultValue: ""
+        description: ""
+        name: OCRSCORE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fdf734ad-79cb-465d-9f68-202ee20fdc37
+          stepCounter: 96784efa-4162-4ab1-8786-8c703986d8c3
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: COMPANY_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c7f0144e-6c88-4b89-8fc6-b1aae2c284ca
+          stepCounter: 96784efa-4162-4ab1-8786-8c703986d8c3
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: TOTAL_REVENUES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 77983dec-ecef-44e1-9ec0-c8c5db0fc82d
+          stepCounter: 96784efa-4162-4ab1-8786-8c703986d8c3
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: TOTAL_GROSS_PROFIT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    join:
+      joinCondition: FROM {{ ref('SOURCE', 'SNOWFLAKE_STRUCTURED_DATA') }}
+  name: SNOWFLAKE_STRUCTURED_DATA
+  schema: ""
+  sqlType: Source
+  table: SNOWFLAKE_STRUCTURED_DATA
+  type: sourceInput
+  version: 1
+type: Node
