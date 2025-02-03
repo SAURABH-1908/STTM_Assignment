@@ -22,7 +22,7 @@ operation:
     rootTask: DATA_TRANSFORMATION_ROOT_TASK
     scheduleCRON: 5 0-23 * * * America/Los_Angeles
     schedulePeriod: "60"
-    schedulePeriodOption: CRON
+    schedulePeriodOption: Minutes
     schedulingMode: Serverless Task
     serverlessSize: MEDIUM
     sourceType: Directory Table

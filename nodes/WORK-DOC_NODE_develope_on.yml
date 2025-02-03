@@ -3,7 +3,7 @@ id: 47f3df23-6e17-4e1a-b703-275a2029b6c7
 name: DOC_NODE_develope_on
 operation:
   config:
-    devMode: false
+    devMode: true
     extractionQueryName: TESLA_Q1_2024_EARNINGS_REPORTS
     extractionQueryStorageLocationName: SOURCE
     extractionQueryVersion: "3"
