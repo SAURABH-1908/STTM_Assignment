@@ -49,7 +49,7 @@ operation:
         config: {}
         dataType: STRING
         defaultValue: ""
-        description: ""
+        description: It should be unique
         fileName: true
         name: FILENAME
         nullable: true

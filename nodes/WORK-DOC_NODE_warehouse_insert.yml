@@ -51,7 +51,7 @@ operation:
         defaultValue: ""
         description: it should be unique
         fileName: true
-        name: FILENAME
+        name: FILENAME_unique
         nullable: true
         sourceColumnReferences:
           - columnReferences: []

@@ -44,23 +44,6 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 90f97210-075c-4d6b-ba6e-c4004294415a
-          stepCounter: 8ffa6c1b-4647-4de6-bacf-4a750d733f94
-        config: {}
-        dataType: STRING
-        defaultValue: ""
-        description: it should be unique
-        fileName: true
-        name: FILENAME
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: REGEXP_SUBSTR(RELATIVE_PATH, '[^/]+$')
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
           columnCounter: b73de653-8515-4d43-9480-d1be5b30249d
           stepCounter: 8ffa6c1b-4647-4de6-bacf-4a750d733f94
         config: {}
