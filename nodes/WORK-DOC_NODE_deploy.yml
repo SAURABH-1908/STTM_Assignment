@@ -1,6 +1,6 @@
 fileVersion: 1
 id: b78eea46-6cc1-42f2-85fb-3b1340ab4de2
-name: DOC_NODE_depoy
+name: DOC_NODE_deploy
 operation:
   config:
     devMode: false
@@ -141,9 +141,9 @@ operation:
         dependencies: []
         join:
           joinCondition: ""
-        name: DOC_NODE_depoy
+        name: DOC_NODE_deploy
         noLinkRefs: []
-  name: DOC_NODE_depoy
+  name: DOC_NODE_deploy
   overrideSQL: false
   schema: ""
   sqlType: "19"
