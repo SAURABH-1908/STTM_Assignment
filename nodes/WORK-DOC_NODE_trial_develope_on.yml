@@ -1,0 +1,161 @@
+fileVersion: 1
+id: 61d0ee2c-2a1d-44b8-b642-f904ec54de0e
+name: DOC_NODE_trial_develope_on
+operation:
+  config:
+    devMode: true
+    extractionQueryName: TESLA_Q1_2024_EARNINGS_REPORTS
+    extractionQueryStorageLocationName: SOURCE
+    extractionQueryVersion: "3"
+    flagSrcStream: true
+    loadType: Insert
+    orderBy:
+      items:
+        - {}
+    partitionBy:
+      items:
+        - {}
+    postSQL: ""
+    preSQL: ""
+    predTask: DATA_TRANSFORMATION_ROOT_TASK
+    redeploymentBehavior: Create or Replace
+    rootTask: DATA_TRANSFORMATION_ROOT_TASK
+    scheduleCRON: 5 0-23 * * * America/Los_Angeles
+    schedulePeriod: "60"
+    schedulePeriodOption: Predecessor
+    schedulingMode: Warehouse Task
+    serverlessSize: MEDIUM
+    sourceType: Directory Table
+    stageName: DEMO_DOC_AI_STAGE
+    stageStorageLocationName: SOURCE
+    truncateBefore: false
+    whName: <WAREHOUSE_NAME>
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1238960a-40a8-4979-9971-97aa6d130188
+          stepCounter: 61d0ee2c-2a1d-44b8-b642-f904ec54de0e
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        fileName: true
+        name: FILENAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: REGEXP_SUBSTR(RELATIVE_PATH, '[^/]+$')
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 899dffd3-0e36-4dd3-abf9-935c56f91118
+          stepCounter: 61d0ee2c-2a1d-44b8-b642-f904ec54de0e
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        name: FILE_URL
+        nullable: true
+        presignedURL: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: FILE_URL
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 89a329d4-d7d5-4c6d-b683-6d8bbce25f2f
+          stepCounter: 61d0ee2c-2a1d-44b8-b642-f904ec54de0e
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        fileLastModified: true
+        name: FILE_LAST_MODIFIED
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: TO_TIMESTAMP_NTZ(LAST_MODIFIED)
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: af437b0f-4234-48c0-9238-2599cdb0a14c
+          stepCounter: 61d0ee2c-2a1d-44b8-b642-f904ec54de0e
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: SIZE
+        nullable: true
+        size: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: SIZE
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c66fb3b3-a330-495b-b4b5-2fc3724a3564
+          stepCounter: 61d0ee2c-2a1d-44b8-b642-f904ec54de0e
+        config: {}
+        dataType: VARIANT
+        defaultValue: ""
+        description: ""
+        extractedData: true
+        name: EXTRACTED_DATA
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2dbcfdfc-ea80-4319-bbb6-617a78b78723
+          stepCounter: 61d0ee2c-2a1d-44b8-b642-f904ec54de0e
+        config: {}
+        dataType: TIMESTAMP_NTZ
+        defaultValue: ""
+        description: ""
+        fileLastModified: true
+        name: DATA_EXTRACT_TIMESTAMP
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CURRENT_TIMESTAMP::TIMESTAMP_NTZ
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies: []
+        join:
+          joinCondition: ""
+        name: DOC_NODE_trial_develope_on
+        noLinkRefs: []
+  name: DOC_NODE_trial_develope_on
+  overrideSQL: false
+  schema: ""
+  sqlType: "19"
+  type: sql
+  version: 1
+type: Node
