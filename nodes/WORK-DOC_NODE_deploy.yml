@@ -10,7 +10,7 @@ operation:
     flagSrcStream: true
     postSQL: ""
     preSQL: ""
-    redeploymentBehavior: Create or Replace
+    redeploymentBehavior: Create If Not Exists
     scheduleCRON: 5 0-23 * * * America/Los_Angeles
     schedulePeriod: "60"
     schedulePeriodOption: Minutes
