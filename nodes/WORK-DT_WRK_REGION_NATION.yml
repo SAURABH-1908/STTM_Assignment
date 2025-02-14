@@ -23,7 +23,7 @@ operation:
           lagValue: 60
     refresh_mode: AUTO
     selectDistinct: false
-    warehouseName: dev_wh_xs
+    warehouseName: compute_wh
   database: ""
   deployEnabled: true
   description: ""
