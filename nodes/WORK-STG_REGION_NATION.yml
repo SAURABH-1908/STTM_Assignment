@@ -130,7 +130,7 @@ operation:
           joinCondition: |-
             FROM {{ ref('SRC', 'REGION') }} "REGION"
             INNER JOIN {{ ref('SRC', 'NATION') }} "NATION"
-            ON "REGION"./*COLUMN*/ = "NATION"./*COLUMN*/
+            ON "REGION"."R_REGIONKEY" = "NATION"."N_NATIONKEY"
         name: STG_REGION_NATION
         noLinkRefs: []
   name: STG_REGION_NATION
