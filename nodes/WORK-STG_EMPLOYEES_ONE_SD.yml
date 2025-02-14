@@ -1,0 +1,151 @@
+fileVersion: 1
+id: d19874fb-37c3-40c7-93ae-b02b1cf4381f
+name: STG_EMPLOYEES_ONE_SD
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 698f2ec8-d956-4884-85e2-fc4ec30206f6
+          stepCounter: d19874fb-37c3-40c7-93ae-b02b1cf4381f
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: EMPLOYEE_ID
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f6b2afd0-1ec1-474a-b31a-38f4cbe9abc2
+                stepCounter: 116120b9-51e7-41ce-b563-4e54415dc95d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 87873dec-8f54-4710-bd4d-7d880613ea51
+          stepCounter: d19874fb-37c3-40c7-93ae-b02b1cf4381f
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: FIRST_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8e6888f8-feb5-4b1d-a6e0-c39797591e42
+                stepCounter: 116120b9-51e7-41ce-b563-4e54415dc95d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7495f03a-649c-4c7e-87d8-1bde58d9e992
+          stepCounter: d19874fb-37c3-40c7-93ae-b02b1cf4381f
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: LAST_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6cbc975f-a191-4220-8013-881fd5e0c9e2
+                stepCounter: 116120b9-51e7-41ce-b563-4e54415dc95d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d0b8924a-0ce7-48c2-9028-4d399b4d3a6f
+          stepCounter: d19874fb-37c3-40c7-93ae-b02b1cf4381f
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: DEPARTMENT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e4756ea9-4cc1-45ba-9f17-e3eb33bab9e2
+                stepCounter: 116120b9-51e7-41ce-b563-4e54415dc95d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a707c04a-50b6-4f6c-a165-e3741945f982
+          stepCounter: d19874fb-37c3-40c7-93ae-b02b1cf4381f
+        config: {}
+        dataType: NUMBER(10,2)
+        description: ""
+        name: SALARY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 915b6636-9325-41b8-b446-6f39dc2f9cf6
+                stepCounter: 116120b9-51e7-41ce-b563-4e54415dc95d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 753cf6c2-fdc8-4586-837a-1970da6f00df
+          stepCounter: d19874fb-37c3-40c7-93ae-b02b1cf4381f
+        config: {}
+        dataType: BOOLEAN
+        description: ""
+        name: IS_CURRENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bcce2f15-5505-447f-b824-40e9cad1870b
+                stepCounter: 116120b9-51e7-41ce-b563-4e54415dc95d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7430243a-1b0f-4b49-ac35-d34180e1fba4
+          stepCounter: d19874fb-37c3-40c7-93ae-b02b1cf4381f
+        config: {}
+        dataType: DATE
+        description: ""
+        name: START_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b4e1ea4c-9dac-4922-9245-f6fc0b7cb235
+                stepCounter: 116120b9-51e7-41ce-b563-4e54415dc95d
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: a81d9adb-b3b4-4d9e-99d4-33b451c56ad2
+          stepCounter: d19874fb-37c3-40c7-93ae-b02b1cf4381f
+        config: {}
+        dataType: DATE
+        description: ""
+        name: END_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aa441f95-1500-46a8-9b1a-28f8c022a3b0
+                stepCounter: 116120b9-51e7-41ce-b563-4e54415dc95d
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: EMPLOYEES_ONE
+        join:
+          joinCondition: FROM {{ ref('SRC', 'EMPLOYEES_ONE') }} "EMPLOYEES_ONE"
+        name: STG_EMPLOYEES_ONE_SD
+        noLinkRefs: []
+  name: STG_EMPLOYEES_ONE_SD
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
