@@ -1,6 +1,6 @@
 fileVersion: 1
 id: ccf721dd-55cc-4d91-89dc-44bdc44eb2f3
-name: STG_REGION_NATION
+name: STG_REGION_NATION_1
 operation:
   config:
     insertStrategy: INSERT
@@ -131,9 +131,9 @@ operation:
             FROM {{ ref('SRC', 'REGION') }} "REGION"
             INNER JOIN {{ ref('SRC', 'NATION') }} "NATION"
             ON "REGION"."R_REGIONKEY" = "NATION"."N_NATIONKEY"
-        name: STG_REGION_NATION
+        name: STG_REGION_NATION_1
         noLinkRefs: []
-  name: STG_REGION_NATION
+  name: STG_REGION_NATION_1
   overrideSQL: false
   schema: ""
   sqlType: Stage

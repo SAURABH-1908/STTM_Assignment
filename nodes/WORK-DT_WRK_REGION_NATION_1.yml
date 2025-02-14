@@ -1,6 +1,6 @@
 fileVersion: 1
 id: f7011528-f2de-4425-ba3b-6e58178d9a5e
-name: DT_WRK_REGION_NATION
+name: DT_WRK_REGION_NATION_1
 operation:
   config:
     baseLocation: ""
@@ -134,17 +134,20 @@ operation:
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
-      - aliases: {}
+      - aliases:
+          STG_REGION_NATION_1: ccf721dd-55cc-4d91-89dc-44bdc44eb2f3
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: WORK
-            nodeName: STG_REGION_NATION
+            nodeName: STG_REGION_NATION_1
         join:
-          joinCondition: FROM {{ ref('WORK', 'STG_REGION_NATION') }} "STG_REGION_NATION"
-        name: DT_WRK_REGION_NATION
+          joinCondition: |-
+            
+            FROM {{ ref('WORK', 'STG_REGION_NATION_1') }} "STG_REGION_NATION_1"
+        name: DT_WRK_REGION_NATION_1
         noLinkRefs: []
-  name: DT_WRK_REGION_NATION
+  name: DT_WRK_REGION_NATION_1
   overrideSQL: false
   schema: ""
   sqlType: DynamicTablePackage:::347
