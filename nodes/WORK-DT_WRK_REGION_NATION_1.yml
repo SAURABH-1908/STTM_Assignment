@@ -135,16 +135,16 @@ operation:
     enabledColumnTestIDs: []
     sourceMapping:
       - aliases:
-          STG_REGION_NATION_1: ccf721dd-55cc-4d91-89dc-44bdc44eb2f3
+          STG_REGION_NATION_0: ccf721dd-55cc-4d91-89dc-44bdc44eb2f3
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: WORK
-            nodeName: STG_REGION_NATION_1
+            nodeName: STG_REGION_NATION_0
         join:
           joinCondition: |-
             
-            FROM {{ ref('WORK', 'STG_REGION_NATION_1') }} "STG_REGION_NATION_1"
+            FROM {{ ref('WORK', 'STG_REGION_NATION_0') }} "STG_REGION_NATION_0"
         name: DT_WRK_REGION_NATION_1
         noLinkRefs: []
   name: DT_WRK_REGION_NATION_1
