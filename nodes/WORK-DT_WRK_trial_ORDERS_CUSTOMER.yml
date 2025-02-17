@@ -275,16 +275,16 @@ operation:
     enabledColumnTestIDs: []
     sourceMapping:
       - aliases:
-          STG_trial_ORDERS_CUSTOMER_a1: c7943ac2-6223-4adf-84e1-b512b8ae1853
+          STG_trial_ORDERS_CUSTOMER_a: c7943ac2-6223-4adf-84e1-b512b8ae1853
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: WORK
-            nodeName: STG_trial_ORDERS_CUSTOMER_a1
+            nodeName: STG_trial_ORDERS_CUSTOMER_a
         join:
           joinCondition: |-
             
-            FROM {{ ref('WORK', 'STG_trial_ORDERS_CUSTOMER_a1') }} "STG_trial_ORDERS_CUSTOMER_a1"
+            FROM {{ ref('WORK', 'STG_trial_ORDERS_CUSTOMER_a') }} "STG_trial_ORDERS_CUSTOMER_a"
         name: DT_WRK_trial_ORDERS_CUSTOMER
         noLinkRefs: []
   name: DT_WRK_trial_ORDERS_CUSTOMER

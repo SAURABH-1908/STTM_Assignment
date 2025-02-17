@@ -29,12 +29,12 @@ select 1 = 0
         ## General metadata
         
         {% set sourcesTest = currentState.sources | count == desiredState.sources | count %}
-       {% set joinTest = true %}  {# Initialize joinTest as true by default #}
+       {% set joinTest = false %}  {# Initialize joinTest as true by default #}
 
      {% if sourcesTest %}
         {% for src in desiredState.sources %}
             {% if currentState.sources[loop.index0].ref != src.ref or currentState.sources[loop.index0].join != src.join %}
-                {% set joinTest = false %}  {# Set joinTest to false if changes are detected #}
+                {% set joinTest = true %}  {# Set joinTest to false if changes are detected #}
             {% endif %}
         {% endfor %}
     {% else %}
