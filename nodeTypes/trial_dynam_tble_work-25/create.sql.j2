@@ -25,13 +25,27 @@ select 1 = 0
     {%endif%}
 
     ## Identify all config changes that would cause a CREATE instead of ALTER
-    {% if currentState != undefined %} 
+   {% if currentState != undefined %} 
         ## General metadata
         
         {% set sourcesTest = currentState.sources | count == desiredState.sources | count %}
-        {% set joinTest = currentState.join == desiredState.join %}
+       {% set joinTest = true %}  {# Initialize joinTest as true by default #}
 
-            
+     {% if sourcesTest %}
+        {% for src in desiredState.sources %}
+            {% if currentState.sources[loop.index0].ref != src.ref or currentState.sources[loop.index0].join != src.join %}
+                {% set joinTest = false %}  {# Set joinTest to false if changes are detected #}
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        {% set joinTest = false %}  {# Set joinTest to false if the number of sources differs #}
+    {% endif %}
+    
+    
+   |
+
+   
+    
         {# Test to see if the transform in a column has changed #}
         {# Desired Namespace Variables Transform #}
         {% set desiredTransformArray = desiredState.sources | map(attribute='columns') | first | map(attribute='transform') | list -%}

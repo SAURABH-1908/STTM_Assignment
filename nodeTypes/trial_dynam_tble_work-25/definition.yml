@@ -167,5 +167,5 @@ metadata:
           isRequired: false
           enableIf: "{% if node.materializationType == 'iceberg dynamic table'%} true {% else %} false {% endif %}"
        
-name: trial_dynam_tble
+name: trial_dynam_tble_work
 type: NodeType
