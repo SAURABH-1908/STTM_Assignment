@@ -20,7 +20,7 @@ operation:
     lagSpecification:
       items:
         - {}
-    refresh_mode: AUTO
+    refresh_mode: FULL
     selectDistinct: false
     warehouseName: dev_wh_xs
   database: ""

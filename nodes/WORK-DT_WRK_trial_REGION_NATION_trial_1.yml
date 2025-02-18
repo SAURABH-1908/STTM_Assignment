@@ -21,9 +21,9 @@ operation:
       items:
         - lagPeriod: Hours
           lagValue: 60
-    refresh_mode: AUTO
+    refresh_mode: INCREMENTAL
     selectDistinct: false
-    warehouseName: dev_wh_xs
+    warehouseName: compute_wh
   database: ""
   deployEnabled: true
   description: Data from Nation and its regions
