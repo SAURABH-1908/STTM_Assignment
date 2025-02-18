@@ -131,6 +131,26 @@ operation:
               - columnCounter: 8e823fab-216c-4e65-a2a8-13ce114ea3a5
                 stepCounter: ccf721dd-55cc-4d91-89dc-44bdc44eb2f3
             transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c4e0c657-b4a2-4165-af18-8fac43844839
+          stepCounter: 4092f378-8202-477a-baad-83e160a85726
+        config: {}
+        dataType: ""
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: New Column
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: ""
+        systemColumnType: None
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
