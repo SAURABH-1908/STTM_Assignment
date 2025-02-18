@@ -19,7 +19,7 @@ operation:
     insertStrategy: UNION ALL
     lagSpecification:
       items:
-        - lagPeriod: Seconds
+        - lagPeriod: Hours
           lagValue: 60
     refresh_mode: AUTO
     selectDistinct: false
