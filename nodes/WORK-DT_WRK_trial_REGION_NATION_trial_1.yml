@@ -22,7 +22,7 @@ operation:
         - lagPeriod: Hours
           lagValue: 60
     refresh_mode: INCREMENTAL
-    selectDistinct: false
+    selectDistinct: true
     warehouseName: compute_wh
   database: ""
   deployEnabled: true

@@ -8,7 +8,7 @@ operation:
     clusterKeyConfig:
       items:
         - columnName:
-            columnCounter: 3b2bfcbe-bebd-4ca0-9679-aeb04c2384e3
+            columnCounter: cb6a216e-d92b-445e-afec-de1a3ac43e8f
             stepCounter: 9e363d47-9f50-4785-b3c4-ca6bc4f231e1
     clusterKeyConfigExpressions:
       items:
@@ -23,7 +23,7 @@ operation:
       items:
         - {}
     refresh_mode: FULL
-    selectDistinct: true
+    selectDistinct: false
     warehouseName: dev_wh_xs
   database: ""
   deployEnabled: true
