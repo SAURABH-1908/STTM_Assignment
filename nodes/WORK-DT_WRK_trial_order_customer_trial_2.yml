@@ -4,12 +4,10 @@ name: DT_WRK_trial_order_customer_trial_2
 operation:
   config:
     baseLocation: ""
-    clusterKey: true
+    clusterKey: false
     clusterKeyConfig:
       items:
-        - columnName:
-            columnCounter: cb6a216e-d92b-445e-afec-de1a3ac43e8f
-            stepCounter: 9e363d47-9f50-4785-b3c4-ca6bc4f231e1
+        - {}
     clusterKeyConfigExpressions:
       items:
         - {}

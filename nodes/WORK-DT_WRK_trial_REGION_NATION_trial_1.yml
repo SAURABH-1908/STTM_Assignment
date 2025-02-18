@@ -15,14 +15,14 @@ operation:
     downstreamOption: false
     externalVolume: ""
     groupByAll: false
-    initialize: ON_SCHEDULE
+    initialize: ON_CREATE
     insertStrategy: UNION ALL
     lagSpecification:
       items:
         - lagPeriod: Hours
           lagValue: 60
     refresh_mode: INCREMENTAL
-    selectDistinct: true
+    selectDistinct: false
     warehouseName: compute_wh
   database: ""
   deployEnabled: true
