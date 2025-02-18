@@ -1,6 +1,6 @@
 fileVersion: 1
 id: 9e363d47-9f50-4785-b3c4-ca6bc4f231e1
-name: DT_WRK_trial_order_customer_trial
+name: DT_WRK_trial_order_customer_trial_2
 operation:
   config:
     baseLocation: ""
@@ -283,9 +283,9 @@ operation:
             nodeName: STG_trial_ORDERS_CUSTOMER_a1
         join:
           joinCondition: FROM {{ ref('WORK', 'STG_trial_ORDERS_CUSTOMER_a1') }} "STG_trial_ORDERS_CUSTOMER_a1"
-        name: DT_WRK_trial_order_customer_trial
+        name: DT_WRK_trial_order_customer_trial_2
         noLinkRefs: []
-  name: DT_WRK_trial_order_customer_trial
+  name: DT_WRK_trial_order_customer_trial_2
   overrideSQL: false
   schema: ""
   sqlType: "25"
