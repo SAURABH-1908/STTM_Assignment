@@ -289,7 +289,7 @@ operation:
           - columnReferences:
               - columnCounter: "0"
                 stepCounter: "0"
-            transform: current_date()
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
         systemColumnType: None
     cteString: ""
     enabledColumnTestIDs: []
