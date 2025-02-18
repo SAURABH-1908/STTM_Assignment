@@ -14,7 +14,7 @@ operation:
     clusterKeyExpressions: false
     downstreamOption: false
     externalVolume: ""
-    groupByAll: true
+    groupByAll: false
     initialize: ON_CREATE
     insertStrategy: UNION ALL
     lagSpecification:
@@ -29,7 +29,7 @@ operation:
   description: Data from Nation and its regions
   isMultisource: false
   locationName: WORK
-  materializationType: dynamic table
+  materializationType: transient dynamic table
   metadata:
     appliedNodeTests: []
     columns:

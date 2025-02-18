@@ -28,7 +28,7 @@ operation:
   description: ""
   isMultisource: false
   locationName: WORK
-  materializationType: dynamic table
+  materializationType: iceberg dynamic table
   metadata:
     appliedNodeTests: []
     columns:
