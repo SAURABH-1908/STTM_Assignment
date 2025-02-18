@@ -41,7 +41,7 @@ operation:
         dataType: NUMBER(40,0)
         description: ""
         name: R_REGIONKEY
-        nullable: false
+        nullable: true
         sourceColumnReferences:
           - columnReferences:
               - columnCounter: 1b8e2037-04c1-4855-b5eb-b97a6cb49164
@@ -55,7 +55,7 @@ operation:
         dataType: VARCHAR(25)
         description: ""
         name: R_NAME
-        nullable: false
+        nullable: true
         sourceColumnReferences:
           - columnReferences:
               - columnCounter: 04b43809-ddd8-4dd2-80f7-a82a05ba1105

@@ -19,7 +19,7 @@ operation:
     insertStrategy: UNION ALL
     lagSpecification:
       items:
-        - lagPeriod: Minutes
+        - lagPeriod: Seconds
           lagValue: 60
     refresh_mode: AUTO
     selectDistinct: false
@@ -269,6 +269,31 @@ operation:
         sourceColumnReferences:
           - columnReferences:
               - columnCounter: c806c3c0-3e19-4eaa-b64d-25e5b229eb04
+                stepCounter: c7943ac2-6223-4adf-84e1-b512b8ae1853
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4efa587b-8434-49ca-a485-03d34a7e9d37
+          stepCounter: 9e363d47-9f50-4785-b3c4-ca6bc4f231e1
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: SHA256
+        hashedColumns:
+          - columnCounter: f9df4eb3-d618-40d0-94c7-84618a9c32fd
+            stepCounter: 9e363d47-9f50-4785-b3c4-ca6bc4f231e1
+          - columnCounter: e60ac44c-fe78-44c0-b5f0-b350439c1296
+            stepCounter: 9e363d47-9f50-4785-b3c4-ca6bc4f231e1
+        name: GH
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e672cdc3-a938-4ca5-8488-e011a728c981
                 stepCounter: c7943ac2-6223-4adf-84e1-b512b8ae1853
             transform: ""
     cteString: ""
