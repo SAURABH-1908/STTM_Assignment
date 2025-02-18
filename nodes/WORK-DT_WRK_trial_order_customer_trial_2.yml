@@ -4,10 +4,12 @@ name: DT_WRK_trial_order_customer_trial_2
 operation:
   config:
     baseLocation: ""
-    clusterKey: false
+    clusterKey: true
     clusterKeyConfig:
       items:
-        - {}
+        - columnName:
+            columnCounter: 3b2bfcbe-bebd-4ca0-9679-aeb04c2384e3
+            stepCounter: 9e363d47-9f50-4785-b3c4-ca6bc4f231e1
     clusterKeyConfigExpressions:
       items:
         - {}
@@ -21,7 +23,7 @@ operation:
       items:
         - {}
     refresh_mode: FULL
-    selectDistinct: false
+    selectDistinct: true
     warehouseName: dev_wh_xs
   database: ""
   deployEnabled: true
