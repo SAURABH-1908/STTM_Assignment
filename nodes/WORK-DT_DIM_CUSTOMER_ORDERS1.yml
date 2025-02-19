@@ -384,14 +384,17 @@ operation:
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
-      - aliases: {}
+      - aliases:
+          STG_CUSTOMER_ORDERS_a1: 0e158557-1539-4b73-b139-681f6439cb49
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: WORK
-            nodeName: STG_CUSTOMER_ORDERS
+            nodeName: STG_CUSTOMER_ORDERS_a1
         join:
-          joinCondition: FROM {{ ref('WORK', 'STG_CUSTOMER_ORDERS') }} "STG_CUSTOMER_ORDERS"
+          joinCondition: |-
+            
+            FROM {{ ref('WORK', 'STG_CUSTOMER_ORDERS_a1') }} "STG_CUSTOMER_ORDERS_a1"
         name: DT_DIM_CUSTOMER_ORDERS1
         noLinkRefs: []
   name: DT_DIM_CUSTOMER_ORDERS1
