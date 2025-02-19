@@ -6,9 +6,9 @@ mappingDefinitions:
     schema: TPCH_SF1
   WORK:
     database: TESTING
-    schema: WORKTEST
+    schema: TESTING_3_DIM
   WORK_TEST:
     database: TESTING
-    schema: WORKTEST_2
+    schema: TESTING_4_DIM
 name: testing_3
 type: Environment
