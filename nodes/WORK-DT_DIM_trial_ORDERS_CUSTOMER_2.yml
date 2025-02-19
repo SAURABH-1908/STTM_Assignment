@@ -17,16 +17,21 @@ operation:
     initialize: ON_CREATE
     lagSpecification:
       items:
-        - {}
+        - lagPeriod: Seconds
+          lagValue: 60
     orderBy:
       items:
-        - {}
+        - colName:
+            columnCounter: e7b7497c-f3ab-4b96-bbb7-053216d1eedb
+            stepCounter: 7679b191-2aae-4e93-b375-88088c991e9b
     orderByDateTime:
       items:
         - {}
     partitionBy:
       items:
-        - {}
+        - partColName:
+            columnCounter: 0d952778-5004-4f65-863c-134b0d9b7ab1
+            stepCounter: 7679b191-2aae-4e93-b375-88088c991e9b
     recordVersioning: Datetime Column
     refresh_mode: AUTO
     warehouseName: dev_wh_xs

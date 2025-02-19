@@ -8,7 +8,7 @@ mappingDefinitions:
     database: TESTING
     schema: WORKTEST
   WORK_TEST:
-    database: ""
-    schema: ""
+    database: TESTING
+    schema: WORKTEST_2
 name: Testing
 type: Environment
