@@ -28,7 +28,7 @@ operation:
   deployEnabled: true
   description: Data from Nation and its regions
   isMultisource: false
-  locationName: WORK
+  locationName: WORK_TEST
   materializationType: transient dynamic table
   metadata:
     appliedNodeTests: []
@@ -41,7 +41,7 @@ operation:
         dataType: NUMBER(40,0)
         description: ""
         name: R_REGIONKEY
-        nullable: true
+        nullable: false
         sourceColumnReferences:
           - columnReferences:
               - columnCounter: 1b8e2037-04c1-4855-b5eb-b97a6cb49164
