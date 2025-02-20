@@ -12,12 +12,8 @@ does not permit copying or modification for any other purpose.
 {#Release date:20240527  Version:1.1 Released By:AS  Description: Materialization type and cluster key added with this version #}
 {#Release date:20241025  Version:1.2 Released By:PM  Description: Materialization type iceberg dynamic table added #}
 
-{% if desiredState == currentState %}
 
-{{ stage('Nothing to do.') }}
-select 1 = 0
-
-{% elif desiredState  %}
+{% if desiredState  %}
  ## Materialization type transient dynamic table or dynamic table
  {%if  desiredState.node.materializationType == 'transient dynamic table' or  desiredState.node.materializationType == 'dynamic table' %}
     ## Materialization type
@@ -810,9 +806,7 @@ select 1 = 0
 
             {%endif%}
 
-    {% else %}
-        {{ stage('Nothing to do.') }}
-        select 1 = 0
+    
     
     {% endif %}
 
@@ -963,9 +957,6 @@ select 1 = 0
            
         {{ stage('Drop iceberg dynamic table', true, "sql", "drop") }}
          DROP DYNAMIC TABLE IF EXISTS {{ fullyQualifiedTargetObjectName }}
-{%- else -%}
 
-    {{ stage('Nothing to do.') }}
-      select 1 = 0
 
 {% endif %}
