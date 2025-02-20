@@ -275,6 +275,26 @@ operation:
                 stepCounter: "0"
             transform: CURRENT_TIMESTAMP()
         systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 59d5370b-691a-45b8-8f6a-767dabc83579
+          stepCounter: 0e158557-1539-4b73-b139-681f6439cb49
+        config: {}
+        dataType: time
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: new_column_time
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: CURRENT_TIMESTAMP()
+        systemColumnType: None
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
