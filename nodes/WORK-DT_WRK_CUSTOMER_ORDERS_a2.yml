@@ -54,7 +54,7 @@ operation:
         dataType: VARCHAR(25)
         description: ""
         name: C_NAME
-        nullable: true
+        nullable: false
         sourceColumnReferences:
           - columnReferences:
               - columnCounter: 853376fc-fd08-440c-b9ca-7eab30c502b6
@@ -68,7 +68,7 @@ operation:
         dataType: VARCHAR(40)
         description: ""
         name: C_ADDRESS
-        nullable: true
+        nullable: false
         sourceColumnReferences:
           - columnReferences:
               - columnCounter: c2378aa5-e2a2-4f9c-808b-66f149e6d69f
