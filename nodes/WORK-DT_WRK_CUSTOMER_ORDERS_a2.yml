@@ -313,6 +313,35 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: FIRST_VALUE({{ order_by_col()}}) OVER (PARTITION BY {{ partition_by() }} ORDER BY {{ order_by_col() }} asc)
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b4b4bc30-8151-49b5-8395-2e0cf8d6bbfa
+          stepCounter: 4a031da5-e100-45c9-ad35-dfc5e365769f
+        config: {}
+        dataType: STRING
+        defaultValue: ""
+        description: ""
+        hashDetails:
+          hashAlgorithm: SHA1
+        hashedColumns:
+          - columnCounter: 9c0233fe-d7a4-4ce0-9db6-18ac86b02815
+            stepCounter: 4a031da5-e100-45c9-ad35-dfc5e365769f
+          - columnCounter: db6b529e-3544-4740-b603-694f84bc6153
+            stepCounter: 4a031da5-e100-45c9-ad35-dfc5e365769f
+          - columnCounter: 7690148d-80bf-44a7-b4a1-ec0270d1ceec
+            stepCounter: 4a031da5-e100-45c9-ad35-dfc5e365769f
+          - columnCounter: 8e18d90c-ddab-4837-b830-4b64e712be13
+            stepCounter: 4a031da5-e100-45c9-ad35-dfc5e365769f
+          - columnCounter: c7cb3c08-53d3-4ab4-a5b1-7987777fa47f
+            stepCounter: 4a031da5-e100-45c9-ad35-dfc5e365769f
+          - columnCounter: 335ff3c2-1271-4bfa-9282-9fc35e4cd06f
+            stepCounter: 4a031da5-e100-45c9-ad35-dfc5e365769f
+        name: GH
+        nullable: true
+        sourceColumnReferences: []
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
