@@ -413,7 +413,7 @@ operation:
           - columnReferences:
               - columnCounter: "0"
                 stepCounter: "0"
-            transform: current_date()
+            transform: CURRENT_TIME()
         systemColumnType: None
     cteString: ""
     enabledColumnTestIDs: []
