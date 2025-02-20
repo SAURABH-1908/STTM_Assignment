@@ -4,14 +4,17 @@ name: DT_WRK_CUSTOMER_ORDERS_a2
 operation:
   config:
     baseLocation: ""
-    clusterKey: false
+    clusterKey: true
     clusterKeyConfig:
       items:
         - {}
     clusterKeyConfigExpressions:
       items:
-        - {}
-    clusterKeyExpressions: false
+        - columnNameExpressions:
+            columnCounter: 9c0233fe-d7a4-4ce0-9db6-18ac86b02815
+            stepCounter: 4a031da5-e100-45c9-ad35-dfc5e365769f
+          sqlExpression: "\"C_NAME\""
+    clusterKeyExpressions: true
     downstreamOption: true
     externalVolume: ""
     initialize: ON_CREATE
