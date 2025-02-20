@@ -325,7 +325,7 @@ operation:
         defaultValue: ""
         description: ""
         hashDetails:
-          hashAlgorithm: SHA1
+          hashAlgorithm: SHA256
         hashedColumns:
           - columnCounter: 9c0233fe-d7a4-4ce0-9db6-18ac86b02815
             stepCounter: 4a031da5-e100-45c9-ad35-dfc5e365769f
@@ -335,9 +335,9 @@ operation:
             stepCounter: 4a031da5-e100-45c9-ad35-dfc5e365769f
           - columnCounter: 8e18d90c-ddab-4837-b830-4b64e712be13
             stepCounter: 4a031da5-e100-45c9-ad35-dfc5e365769f
-          - columnCounter: c7cb3c08-53d3-4ab4-a5b1-7987777fa47f
+          - columnCounter: 31d269e4-b209-4b1d-a263-9a8825738a57
             stepCounter: 4a031da5-e100-45c9-ad35-dfc5e365769f
-          - columnCounter: 335ff3c2-1271-4bfa-9282-9fc35e4cd06f
+          - columnCounter: d92b361c-0256-48a5-b41c-d19c33bb354d
             stepCounter: 4a031da5-e100-45c9-ad35-dfc5e365769f
         name: GH
         nullable: true
