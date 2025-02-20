@@ -30,7 +30,7 @@ operation:
           colNameTimestamp:
             columnCounter: d4eb4d69-0d3f-4490-bc0a-0587a53243ef
             stepCounter: 7456867b-34b3-4b0f-a137-be8757aa6c40
-          sortOrdDateTimestamp: asc
+          sortOrdDateTimestamp: desc
     partitionBy:
       items:
         - partColName:
