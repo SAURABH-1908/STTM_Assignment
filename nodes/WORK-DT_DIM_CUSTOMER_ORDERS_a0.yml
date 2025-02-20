@@ -395,6 +395,26 @@ operation:
         sourceColumnReferences:
           - columnReferences: []
             transform: FIRST_VALUE({{ order_by_col()}}) OVER (PARTITION BY {{ partition_by() }} ORDER BY {{ order_by_col() }} asc)
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1b75b37d-9a91-44aa-9d2f-1da61bf90acb
+          stepCounter: ac263545-172f-4a2b-8f2a-3bf931e65a25
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: date_timestamp
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: current_date()
+        systemColumnType: None
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
