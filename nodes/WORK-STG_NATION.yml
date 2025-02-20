@@ -85,7 +85,7 @@ operation:
         defaultValue: ""
         description: ""
         keyColumnType: None
-        name: new_timestamp_col
+        name: new_timestamp_column
         nullable: true
         sourceColumnReferences:
           - columnReferences:
@@ -105,7 +105,7 @@ operation:
         defaultValue: ""
         description: ""
         keyColumnType: None
-        name: new_time_col
+        name: new_time_column
         nullable: true
         sourceColumnReferences:
           - columnReferences:
