@@ -103,7 +103,7 @@ operation:
         dataType: VARCHAR(40)
         description: ""
         name: C_ADDRESS
-        nullable: false
+        nullable: true
         sourceColumnReferences:
           - columnReferences:
               - columnCounter: c2378aa5-e2a2-4f9c-808b-66f149e6d69f
