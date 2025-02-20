@@ -1,6 +1,6 @@
 fileVersion: 1
 id: 0e158557-1539-4b73-b139-681f6439cb49
-name: STG_CUSTOMER_ORDERS_a1
+name: STG_CUSTOMER_ORDERS_a0
 operation:
   config:
     insertStrategy: INSERT
@@ -291,9 +291,9 @@ operation:
             FROM {{ ref('SRC', 'CUSTOMER') }} "CUSTOMER"
             INNER JOIN {{ ref('SRC', 'ORDERS') }} "ORDERS"
             ON "CUSTOMER"."C_CUSTKEY" = "ORDERS"."O_CUSTKEY"
-        name: STG_CUSTOMER_ORDERS_a1
+        name: STG_CUSTOMER_ORDERS_a0
         noLinkRefs: []
-  name: STG_CUSTOMER_ORDERS_a1
+  name: STG_CUSTOMER_ORDERS_a0
   overrideSQL: false
   schema: ""
   sqlType: Stage

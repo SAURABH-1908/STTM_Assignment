@@ -385,16 +385,16 @@ operation:
     enabledColumnTestIDs: []
     sourceMapping:
       - aliases:
-          STG_CUSTOMER_ORDERS_a1: 0e158557-1539-4b73-b139-681f6439cb49
+          STG_CUSTOMER_ORDERS_a0: 0e158557-1539-4b73-b139-681f6439cb49
         customSQL:
           customSQL: ""
         dependencies:
           - locationName: WORK
-            nodeName: STG_CUSTOMER_ORDERS_a1
+            nodeName: STG_CUSTOMER_ORDERS_a0
         join:
           joinCondition: |-
             
-            FROM {{ ref('WORK', 'STG_CUSTOMER_ORDERS_a1') }} "STG_CUSTOMER_ORDERS_a1"
+            FROM {{ ref('WORK', 'STG_CUSTOMER_ORDERS_a0') }} "STG_CUSTOMER_ORDERS_a0"
         name: DT_DIM_CUSTOMER_ORDERS_a1
         noLinkRefs: []
   name: DT_DIM_CUSTOMER_ORDERS_a1
