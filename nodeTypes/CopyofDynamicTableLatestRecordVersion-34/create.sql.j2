@@ -32,7 +32,7 @@ does not permit copying or modification for any other purpose.
         nsDesiredUsedStorageLocations="",
         storageLocationTest= true,
         descolchanges = 0,
-        othercolchanges = 0, joinTest = True ) %}
+        othercolchanges = 0 ) %}
         {% for src in desiredState.sources %}
             {% if  currentState.sources[loop.index0].join != src.join %}
                 {% set nsVariables.joinTest = false %}  {# Set joinTest to false if changes are detected #}
