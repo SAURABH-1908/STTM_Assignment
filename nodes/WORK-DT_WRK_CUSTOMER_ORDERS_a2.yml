@@ -12,13 +12,12 @@ operation:
       items:
         - {}
     clusterKeyExpressions: false
-    downstreamOption: false
+    downstreamOption: true
     externalVolume: ""
     initialize: ON_CREATE
     lagSpecification:
       items:
-        - lagPeriod: Seconds
-          lagValue: 60
+        - {}
     orderBy:
       items:
         - colName:

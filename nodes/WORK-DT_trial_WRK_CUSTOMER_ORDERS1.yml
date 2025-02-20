@@ -123,7 +123,7 @@ operation:
           columnCounter: 679398ed-4611-4c11-92ac-16ef21d08de1
           stepCounter: eb589750-9a35-40cd-80cb-45fad8f131ce
         config: {}
-        dataType: NUMBER(12,2)
+        dataType: NUMBER(16,3)
         description: ""
         name: C_ACCTBAL
         nullable: false
