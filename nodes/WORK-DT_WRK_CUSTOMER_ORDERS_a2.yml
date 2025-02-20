@@ -4,12 +4,10 @@ name: DT_WRK_CUSTOMER_ORDERS_a2
 operation:
   config:
     baseLocation: ""
-    clusterKey: true
+    clusterKey: false
     clusterKeyConfig:
       items:
-        - columnName:
-            columnCounter: db6b529e-3544-4740-b603-694f84bc6153
-            stepCounter: 4a031da5-e100-45c9-ad35-dfc5e365769f
+        - {}
     clusterKeyConfigExpressions:
       items:
         - columnNameExpressions:
