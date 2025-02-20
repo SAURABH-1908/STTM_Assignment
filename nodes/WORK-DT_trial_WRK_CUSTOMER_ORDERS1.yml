@@ -4,16 +4,13 @@ name: DT_trial_WRK_CUSTOMER_ORDERS1
 operation:
   config:
     baseLocation: ""
-    clusterKey: true
+    clusterKey: false
     clusterKeyConfig:
       items:
         - {}
     clusterKeyConfigExpressions:
       items:
-        - columnNameExpressions:
-            columnCounter: 1e64eb35-9c88-4b3d-a4b3-d6fc5d3ae1b8
-            stepCounter: eb589750-9a35-40cd-80cb-45fad8f131ce
-          sqlExpression: "\"C_NAME\""
+        - {}
     clusterKeyExpressions: true
     downstreamOption: false
     externalVolume: ""
@@ -33,11 +30,11 @@ operation:
           colNameTimestamp:
             columnCounter: 16614839-7d4a-4bda-8d67-06eb0a9fafc6
             stepCounter: eb589750-9a35-40cd-80cb-45fad8f131ce
-          sortOrdDateTimestamp: asc
+          sortOrdDateTimestamp: desc
     partitionBy:
       items:
         - partColName:
-            columnCounter: d81d125c-1235-4e14-a2c9-57c0aab0363c
+            columnCounter: fe93875e-8c53-4966-b7bc-15c1f34e88c2
             stepCounter: eb589750-9a35-40cd-80cb-45fad8f131ce
     recordVersioning: Date Column and Time Column
     refresh_mode: AUTO
