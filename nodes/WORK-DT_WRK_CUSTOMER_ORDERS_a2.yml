@@ -21,22 +21,18 @@ operation:
           lagValue: 60
     orderBy:
       items:
-        - {}
+        - colName:
+            columnCounter: 9c115788-c9de-4932-bdd9-3d8ed8ecc8f3
+            stepCounter: 4a031da5-e100-45c9-ad35-dfc5e365769f
     orderByDateTime:
       items:
-        - colNameDate:
-            columnCounter: 44a4e4c1-3c22-4b8b-9912-ffca1971ef0c
-            stepCounter: 4a031da5-e100-45c9-ad35-dfc5e365769f
-          colNameTimestamp:
-            columnCounter: e2d80d9f-efd1-4d59-98b3-1c1d087349eb
-            stepCounter: 4a031da5-e100-45c9-ad35-dfc5e365769f
-          sortOrdDateTimestamp: desc
+        - {}
     partitionBy:
       items:
         - partColName:
             columnCounter: db6b529e-3544-4740-b603-694f84bc6153
             stepCounter: 4a031da5-e100-45c9-ad35-dfc5e365769f
-    recordVersioning: Date Column and Time Column
+    recordVersioning: Datetime Column
     refresh_mode: AUTO
     warehouseName: dev_wh_xs
   database: ""

@@ -34,7 +34,7 @@ operation:
     partitionBy:
       items:
         - partColName:
-            columnCounter: 1e64eb35-9c88-4b3d-a4b3-d6fc5d3ae1b8
+            columnCounter: d81d125c-1235-4e14-a2c9-57c0aab0363c
             stepCounter: eb589750-9a35-40cd-80cb-45fad8f131ce
     recordVersioning: Date Column and Time Column
     refresh_mode: AUTO
