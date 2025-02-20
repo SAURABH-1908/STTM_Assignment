@@ -7,13 +7,14 @@ operation:
     clusterKey: true
     clusterKeyConfig:
       items:
-        - columnName:
-            columnCounter: fe93875e-8c53-4966-b7bc-15c1f34e88c2
-            stepCounter: eb589750-9a35-40cd-80cb-45fad8f131ce
+        - {}
     clusterKeyConfigExpressions:
       items:
-        - {}
-    clusterKeyExpressions: false
+        - columnNameExpressions:
+            columnCounter: 1e64eb35-9c88-4b3d-a4b3-d6fc5d3ae1b8
+            stepCounter: eb589750-9a35-40cd-80cb-45fad8f131ce
+          sqlExpression: "\"C_NAME\""
+    clusterKeyExpressions: true
     downstreamOption: false
     externalVolume: ""
     initialize: ON_CREATE
