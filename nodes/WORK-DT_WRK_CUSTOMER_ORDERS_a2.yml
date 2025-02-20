@@ -56,7 +56,7 @@ operation:
         dataType: VARCHAR(25)
         description: ""
         name: C_NAME
-        nullable: false
+        nullable: true
         sourceColumnReferences:
           - columnReferences:
               - columnCounter: 853376fc-fd08-440c-b9ca-7eab30c502b6
