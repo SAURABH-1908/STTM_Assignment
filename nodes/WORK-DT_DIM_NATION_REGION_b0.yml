@@ -68,7 +68,7 @@ operation:
         config: {}
         dataType: NUMBER(38,0)
         description: ""
-        name: N_NATIONKEY
+        name: N_NATIONKEY_nation
         nullable: false
         sourceColumnReferences:
           - columnReferences:

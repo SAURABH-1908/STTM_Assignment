@@ -1,6 +1,6 @@
 fileVersion: 1
 id: c70abdb6-275b-4a1c-9b27-56a6ffec08b7
-name: DT_DIM_CUSTOMER_ORDERS_a0
+name: DT_DIM_CUSTOMER_ORDERS_a1
 operation:
   config:
     baseLocation: ""
@@ -395,9 +395,9 @@ operation:
           joinCondition: |-
             
             FROM {{ ref('WORK', 'STG_CUSTOMER_ORDERS_a1') }} "STG_CUSTOMER_ORDERS_a1"
-        name: DT_DIM_CUSTOMER_ORDERS_a0
+        name: DT_DIM_CUSTOMER_ORDERS_a1
         noLinkRefs: []
-  name: DT_DIM_CUSTOMER_ORDERS_a0
+  name: DT_DIM_CUSTOMER_ORDERS_a1
   overrideSQL: false
   schema: ""
   sqlType: "31"
