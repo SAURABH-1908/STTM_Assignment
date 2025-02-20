@@ -1,0 +1,202 @@
+fileVersion: 1
+id: 89466cbf-dfde-4e69-b92e-713f667f7b28
+name: STG_NATION_REGION
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b1531e3c-ea81-4a2d-bc16-aee1e7cddfad
+          stepCounter: 89466cbf-dfde-4e69-b92e-713f667f7b28
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: N_NATIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f2eecd1c-5ee1-42f7-a997-a67f3f0f5ccc
+                stepCounter: 5530f3ee-c110-4883-a7f7-f3b1da8e3996
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5ebc075c-e1c5-4a15-9132-80d90ef7f3f5
+          stepCounter: 89466cbf-dfde-4e69-b92e-713f667f7b28
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: N_NAME
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0829c827-434c-4d66-8dcc-4e8ee2a48198
+                stepCounter: 5530f3ee-c110-4883-a7f7-f3b1da8e3996
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: ae1d2cd5-e6a5-4689-8ba8-b0e451f9e9e4
+          stepCounter: 89466cbf-dfde-4e69-b92e-713f667f7b28
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: N_REGIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 20424eab-9449-4fee-bdd3-b679bf6368e8
+                stepCounter: 5530f3ee-c110-4883-a7f7-f3b1da8e3996
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8581624b-135e-432e-95cc-2ba300aae5f2
+          stepCounter: 89466cbf-dfde-4e69-b92e-713f667f7b28
+        config: {}
+        dataType: VARCHAR(152)
+        description: ""
+        name: N_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 33329202-9712-4bf5-bd0f-047e1593fd7e
+                stepCounter: 5530f3ee-c110-4883-a7f7-f3b1da8e3996
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c0f8032a-7f76-45f6-a988-cbe36ef5d691
+          stepCounter: 89466cbf-dfde-4e69-b92e-713f667f7b28
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: R_REGIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 634f3590-8ee5-4750-8845-180d642b1549
+                stepCounter: 61bfde93-00bf-43f7-98e3-5855ae31822e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e8a739e4-e918-4d76-b260-a3d586134afb
+          stepCounter: 89466cbf-dfde-4e69-b92e-713f667f7b28
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: R_NAME
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 045d39e2-19bd-48d3-9e4f-4ae1e6ea0685
+                stepCounter: 61bfde93-00bf-43f7-98e3-5855ae31822e
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 84e82820-b9db-4907-b903-88eb8f79c477
+          stepCounter: 89466cbf-dfde-4e69-b92e-713f667f7b28
+        config: {}
+        dataType: VARCHAR(152)
+        description: ""
+        name: R_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8e90ec1f-a915-4943-8b55-62ba8ec222c3
+                stepCounter: 61bfde93-00bf-43f7-98e3-5855ae31822e
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5151315b-9246-4abc-b9f2-0bf5b46a6498
+          stepCounter: 89466cbf-dfde-4e69-b92e-713f667f7b28
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: new_column
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: CURRENT_TIMESTAMP()
+        systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3f2c98e6-b31d-4eab-bc1a-5a6f1d936508
+          stepCounter: 89466cbf-dfde-4e69-b92e-713f667f7b28
+        config: {}
+        dataType: date
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: new_date_col
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: current_date()
+        systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e7d543cf-901b-4f6a-95ce-d784bd491891
+          stepCounter: 89466cbf-dfde-4e69-b92e-713f667f7b28
+        config: {}
+        dataType: time
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: new_time_col
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: CURRENT_TIME()
+        systemColumnType: None
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: NATION
+          - locationName: SOURCE
+            nodeName: REGION
+        join:
+          joinCondition: |-
+            FROM {{ ref('SOURCE', 'NATION') }} "NATION"
+            INNER JOIN {{ ref('SOURCE', 'REGION') }} "REGION"
+            ON "NATION"."N_REGIONKEY" = "REGION"."R_REGIONKEY"
+        name: STG_NATION_REGION
+        noLinkRefs: []
+  name: STG_NATION_REGION
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
