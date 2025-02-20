@@ -1,0 +1,223 @@
+fileVersion: 1
+id: e5f05bb0-2043-4811-8476-8e217243ac2d
+name: DT_trial_WRK_NATION_REGION_b0
+operation:
+  config:
+    baseLocation: ""
+    clusterKey: false
+    clusterKeyConfig:
+      items:
+        - {}
+    clusterKeyConfigExpressions:
+      items:
+        - {}
+    clusterKeyExpressions: false
+    downstreamOption: false
+    externalVolume: ""
+    initialize: ON_CREATE
+    lagSpecification:
+      items:
+        - lagPeriod: Seconds
+          lagValue: 60
+    orderBy:
+      items:
+        - colName:
+            columnCounter: bdfabe48-014a-4dad-8661-825f0ff0ace5
+            stepCounter: e5f05bb0-2043-4811-8476-8e217243ac2d
+    orderByDateTime:
+      items:
+        - {}
+    partitionBy:
+      items:
+        - partColName:
+            columnCounter: 873db118-2573-4e63-a6e4-a9f5216bfd2d
+            stepCounter: e5f05bb0-2043-4811-8476-8e217243ac2d
+    recordVersioning: Datetime Column
+    refresh_mode: AUTO
+    warehouseName: dev_wh_xs
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: dynamic table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1281b625-2c00-42b0-a146-74879a73e5df
+          stepCounter: e5f05bb0-2043-4811-8476-8e217243ac2d
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: N_NATIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8b36abe6-80d1-430f-974e-ac27f570e49c
+                stepCounter: 5b43fc03-cb6c-4802-9219-8c9a20e9ffc9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 873db118-2573-4e63-a6e4-a9f5216bfd2d
+          stepCounter: e5f05bb0-2043-4811-8476-8e217243ac2d
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: N_NAME
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 53e339e6-cbd2-45c2-927c-9f20db5efb4f
+                stepCounter: 5b43fc03-cb6c-4802-9219-8c9a20e9ffc9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0585bb7b-1a1d-47fb-b418-2d96250feda0
+          stepCounter: e5f05bb0-2043-4811-8476-8e217243ac2d
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: N_REGIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 424ec252-8f7b-42f0-a451-e6e6efcd7229
+                stepCounter: 5b43fc03-cb6c-4802-9219-8c9a20e9ffc9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 45b13574-eb97-434a-99c5-8bfb87db40d9
+          stepCounter: e5f05bb0-2043-4811-8476-8e217243ac2d
+        config: {}
+        dataType: VARCHAR(152)
+        description: ""
+        name: N_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ff015b8b-80e5-4a42-af15-6e391f20a988
+                stepCounter: 5b43fc03-cb6c-4802-9219-8c9a20e9ffc9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e3a5addc-abfe-4e2a-8c28-34d5c6a48dbf
+          stepCounter: e5f05bb0-2043-4811-8476-8e217243ac2d
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: R_REGIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9e578b27-d533-45c3-baab-c210ed5d4c4d
+                stepCounter: 5b43fc03-cb6c-4802-9219-8c9a20e9ffc9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: f97f1c32-ab44-47ab-8fe2-812e5a5243a8
+          stepCounter: e5f05bb0-2043-4811-8476-8e217243ac2d
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: R_NAME
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f886919d-8b8e-4e89-94f3-58226f4d23d5
+                stepCounter: 5b43fc03-cb6c-4802-9219-8c9a20e9ffc9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9d4e500d-d616-4877-a30f-d0e5b6c35214
+          stepCounter: e5f05bb0-2043-4811-8476-8e217243ac2d
+        config: {}
+        dataType: VARCHAR(152)
+        description: ""
+        name: R_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4a8191e8-9d3e-45a1-8e73-ebde4cd33ebd
+                stepCounter: 5b43fc03-cb6c-4802-9219-8c9a20e9ffc9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c3856774-49db-488e-89c4-d7234d192a22
+          stepCounter: e5f05bb0-2043-4811-8476-8e217243ac2d
+        config: {}
+        dataType: time
+        description: ""
+        name: new_time_col
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 374c5ef0-4114-4212-b750-f6ed863014b5
+                stepCounter: 5b43fc03-cb6c-4802-9219-8c9a20e9ffc9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bdfabe48-014a-4dad-8661-825f0ff0ace5
+          stepCounter: e5f05bb0-2043-4811-8476-8e217243ac2d
+        config: {}
+        dataType: timestamp
+        description: ""
+        name: new_timestamp_col
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2c4a66f5-42da-48f3-938c-48d055a8a1ab
+                stepCounter: 5b43fc03-cb6c-4802-9219-8c9a20e9ffc9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: da375191-7b1f-4712-9388-208b9fcec702
+          stepCounter: e5f05bb0-2043-4811-8476-8e217243ac2d
+        config: {}
+        dataType: date
+        description: ""
+        name: new_date_col
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1323f0d5-741b-4262-8f8a-2891f9963803
+                stepCounter: 5b43fc03-cb6c-4802-9219-8c9a20e9ffc9
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4e205eae-33ad-4e6e-9d11-c1d88e7bb401
+          stepCounter: e5f05bb0-2043-4811-8476-8e217243ac2d
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        name: RECORD_CREATED_DATE
+        nullable: true
+        recordCreated: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: FIRST_VALUE({{ order_by_col()}}) OVER (PARTITION BY {{ partition_by() }} ORDER BY {{ order_by_col() }} asc)
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: WORK
+            nodeName: STG_NATION_REGION_b0
+        join:
+          joinCondition: FROM {{ ref('WORK', 'STG_NATION_REGION_b0') }} "STG_NATION_REGION_b0"
+        name: DT_trial_WRK_NATION_REGION_b0
+        noLinkRefs: []
+  name: DT_trial_WRK_NATION_REGION_b0
+  overrideSQL: false
+  schema: ""
+  sqlType: "37"
+  type: sql
+  version: 1
+type: Node
