@@ -4,10 +4,12 @@ name: DT_DIM_CUSTOMER_ORDERS_a0
 operation:
   config:
     baseLocation: ""
-    clusterKey: false
+    clusterKey: true
     clusterKeyConfig:
       items:
-        - {}
+        - columnName:
+            columnCounter: 336e47b0-dd8f-446f-b715-0fab105d0f56
+            stepCounter: 7456867b-34b3-4b0f-a137-be8757aa6c40
     clusterKeyConfigExpressions:
       items:
         - {}
