@@ -133,20 +133,6 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: c11d32ba-c9ea-4762-bbb2-2e9f60774b54
-          stepCounter: 7bdd7440-3a32-4de4-9793-845c55fe7808
-        config: {}
-        dataType: VARCHAR(25)
-        description: ""
-        name: R_NAME
-        nullable: false
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: bd1eeba9-595f-4a4f-9351-ac9f9eca1241
-                stepCounter: 69bc03db-38eb-45a8-8194-8e3c4ed6d57d
-            transform: ""
-      - appliedColumnTests: {}
-        columnReference:
           columnCounter: ae32cb33-a7a5-46b4-a339-838143211331
           stepCounter: 7bdd7440-3a32-4de4-9793-845c55fe7808
         config: {}
