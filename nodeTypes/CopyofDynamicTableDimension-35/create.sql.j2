@@ -2,20 +2,20 @@
     Copyright (c) 2023 Coalesce. All rights reserved.
 This script and its associated documentation are confidential and proprietary to Coalesce.
 Unauthorized reproduction, distribution, or disclosure of this material is strictly prohibited.
-Coalesce permits you to copy and modify this script for the purposes of using with Coalsce but
+Coalesce permits you to copy and modify this script for the purposes of using with Coalesce but
 does not permit copying or modification for any other purpose.  
 #}
 {# == Node Type Version        : 1.2  == #}
-{# == Node Type Name           : Dynamic Table Work  == #}
-{# == Node Type Description    : This node creates and runs dynamic table work.Materialization type and cluster key added with this version == #}
+{# == Node Type Name           : Dynamic Table Dimension  == #}
+{# == Node Type Description    : This node creates and runs dynamic table dimension.Materialization type and cluster key added with this version == #}
 {#Release date:20231215  Version:1.0#}
 {#Release date:20240527  Version:1.1 Released By:AS  Description: Materialization type and cluster key added with this version #}
 {#Release date:20241025  Version:1.2 Released By:PM  Description: Materialization type iceberg dynamic table added #}
 
 
-
 {% if desiredState  %}
-   {%if  desiredState.node.materializationType == 'transient dynamic table' or  desiredState.node.materializationType == 'dynamic table' %}
+ ## Materialization type transient dynamic table or dynamic table
+ {%if  desiredState.node.materializationType == 'transient dynamic table' or  desiredState.node.materializationType == 'dynamic table' %}
     ## Materialization type
     {%if  desiredState.node.materializationType == 'transient dynamic table' %}
           {% set keyword = 'TRANSIENT'  %}
@@ -26,19 +26,18 @@ does not permit copying or modification for any other purpose.
         ## General metadata
         
         {% set sourcesTest = currentState.sources | count == desiredState.sources | count %}
-       {% set sourcesTest = currentState.sources | count == desiredState.sources | count %}
+         {% set sourcesTest = currentState.sources | count == desiredState.sources | count %}
         {% set nsVariables = namespace(nsDesiredDepStorageLocations="",nsDesiredSourceStorageLocations="",
         nsDesiredTargetStorageLocations="",
         nsDesiredUsedStorageLocations="",
         storageLocationTest= true,
         descolchanges = 0,
-        othercolchanges = 0,  joinTest = True) %}
+        othercolchanges = 0, joinTest = True ) %}
         {% for src in desiredState.sources %}
             {% if  currentState.sources[loop.index0].join != src.join %}
                 {% set nsVariables.joinTest = false %}  {# Set joinTest to false if changes are detected #}
             {% endif %}
             {% endfor %}
-
             
         {# Test to see if the transform in a column has changed #}
         {# Desired Namespace Variables Transform #}
@@ -56,7 +55,7 @@ does not permit copying or modification for any other purpose.
         ## Current Namespace Variables
 
         ## Desired Namespace Variables
-        
+       
         
         ## Desired State Storage Location Info
         {% for source in desiredState.sources %}
@@ -115,14 +114,15 @@ does not permit copying or modification for any other purpose.
         {% endfor %}
 
         ## Config
-        {% set insertStrategyTest = currentState.config.insertStrategy == desiredState.config.insertStrategy %}
-        {% set groupByAllTest = currentState.config.groupByAll == desiredState.config.groupByAll %}
-        {% set selectDistinctTest = currentState.config.selectDistinct == desiredState.config.selectDistinct %}
-
+        {% set partitionByTest = currentState.config.partitionBy == desiredState.config.partitionBy %}
+        {% set orderByTest = currentState.config.orderBy == desiredState.config.orderBy %}
+        {% set orderByDateTimeTest = currentState.config.orderByDateTime == desiredState.config.orderByDateTime %}
+        {% set recordVersioningTest = currentState.config.recordVersioning == desiredState.config.recordVersioning %}																				
+		
         ## Node
         {% set nodeNameTest = currentState.node.name == desiredState.node.name %}
         {% set nodeMaterializationType = currentState.node.materializationType == desiredState.node.materializationType %}
-        {% set nodeIsMultisource = currentState.node.isMultisource == desiredState.node.isMultisource %}
+        
 
         ## Refresh_mode test
         {% set refreshTest = currentState.config.refresh_mode == desiredState.config.refresh_mode %}
@@ -163,7 +163,6 @@ does not permit copying or modification for any other purpose.
                     {%if (datatypeTest == false or defaultValueTest == false or columnnameTest == false )%}
                     {% set nsVariables.othercolchanges = nsVariables.othercolchanges + 1 %}
                     {% endif %}
-
                 {%endif%}    
             {% endfor %}
 
@@ -175,10 +174,10 @@ does not permit copying or modification for any other purpose.
             sourcesTest == false or
             nsVariables.joinTest == false or
             columnsTransformTest == false or
-            insertStrategyTest == false or 
-            groupByAllTest == false or 
-            selectDistinctTest == false or 
-            nodeIsMultisource == false or 
+			partitionByTest == false or 
+            orderByTest == false or 
+            orderByDateTimeTest == false or 
+            recordVersioningTest == false or   
             initializeTest == false or
             refreshTest == false or (currentState.storageLocations | length ==0)  %}    
 
@@ -318,7 +317,7 @@ does not permit copying or modification for any other purpose.
 
         ## Node description
         {%- if desiredState.node.description | length > 0 %} 
-            {% set dynamicTableComment = "COMMENT = " + "'" + desiredState.node.description |escape + "'" %}
+            {% set dynamicTableComment = "COMMENT = " + "'" + desiredState.node.description | escape + "'" %}
         {% endif %}
         
         {% if nsVariables.storageLocationTest == false or 
@@ -334,13 +333,13 @@ does not permit copying or modification for any other purpose.
                   DROP DYNAMIC TABLE IF EXISTS {{currentFullyQualifiedTargetDynamicTableName}}
         {%endif%}
 
-        {{ stage('Create Work '+ '{{ desiredState.node.materializationType }}', true, "sql", "create") }}
+        {{ stage('Create Dimension '+ '{{ desiredState.node.materializationType }}', true, "sql", "create") }}
         CREATE OR REPLACE {{ keyword }} DYNAMIC TABLE {{ fullyQualifiedTargetDynamicTableName }}
             TARGET_LAG = '{{ dynamicTableLagSpecification }}'
             WAREHOUSE = {{dynamicTableWarehouse}}
             REFRESH_MODE   = {{dynamicTablerefresh}}
             INITIALIZE = {{dynamicTableinitialize}}
-            {{ dynamicTableComment  }}
+            {{ dynamicTableComment}}
         (
             {% for col in desiredState.columns %}
                 "{{ col.name }}"
@@ -350,14 +349,14 @@ does not permit copying or modification for any other purpose.
         )
         AS
         {% for source in desiredState.sources %}
-            SELECT {% if desiredState.config.selectDistinct %} DISTINCT {% endif %}
+            SELECT 
             {% for col in source.columns %}
                 {{ get_source_transform(col) }} AS "{{ col.name }}"
                 {%- if not loop.last -%}, {% endif %}
             {% endfor %}
 
             {{ source.join }}
-            {% if desiredState.config.groupByAll %} GROUP BY ALL {% endif %}
+            
 
             {% if not loop.last %}
                 {% if desiredState.config.insertStrategy in ['UNION', 'UNION ALL'] %}
@@ -447,14 +446,14 @@ does not permit copying or modification for any other purpose.
             {% set dynamicTableComment = "COMMENT = " + "'" + desiredState.node.description |escape + "'" %}
         {% endif %}
 
-             {# Change in storage mappings,target location or node name #}
+         {# Change in storage mappings,target location or node name #}
          {% if nsVariables.storageLocationTest == false or 
              nodeNameTest == false  %}
-                {{ stage('Alter Dynamic Table', true, "sql", "alter") }}
-				{% set srcSchName = currentState.node.location.name %}
+                {% set srcSchName = currentState.node.location.name %}
                 {% set cdb = currentState.storageLocations | selectattr('name', 'equalto', srcSchName) | map(attribute='database') | first %}
                 {% set csch = currentState.storageLocations | selectattr('name', 'equalto', srcSchName) | map(attribute='schema') | first %}
-                  ALTER DYNAMIC TABLE IF EXISTS  "{{cdb}}"."{{csch}}"."{{currentState.node.name}}" RENAME TO {{ desiredFullyQualifiedTargetDynamicTableName }}
+                {{ stage('Alter Dynamic Table', true, "sql", "alter") }}
+                  ALTER DYNAMIC TABLE IF EXISTS "{{cdb}}"."{{csch}}"."{{currentState.node.name}}" RENAME TO {{ desiredFullyQualifiedTargetDynamicTableName }}
           {%endif%}
  
 
@@ -495,7 +494,7 @@ does not permit copying or modification for any other purpose.
                 {{ nsVariables.finalClusterKey }}
 
             {% endif %}
-            
+
         {# Change in column description #}
             
             {% for alterCurCol in currentState.columns %}        
@@ -510,13 +509,11 @@ does not permit copying or modification for any other purpose.
 
                     {% if (descriptionTest == false) %}
                     {{ stage('Alter Dynamic Table', true, "sql", "alter") }}
-                       ALTER DYNAMIC TABLE {{ desiredFullyQualifiedTargetDynamicTableName }} MODIFY COLUMN {{desiredColumnName}} COMMENT '{{desiredDescription }}'
+                       ALTER DYNAMIC TABLE {{ desiredFullyQualifiedTargetDynamicTableName }} MODIFY COLUMN {{desiredColumnName}} COMMENT '{{desiredDescription | escape  }}'
                     {% endif %}
 
                 {%endif%}    
             {% endfor %}
-
-           
 
 
         {% if  warehouseTest == false or lagSpecificationTest == false or downstreamOptionTest == false or nodeCommentTest == false %}
@@ -524,7 +521,7 @@ does not permit copying or modification for any other purpose.
            ALTER DYNAMIC TABLE {{ desiredFullyQualifiedTargetDynamicTableName }} SET
             {{ dynamicTableWarehouse }}
             {{ dynamicTableLagSpecification }}
-            {{ dynamicTableComment }}      
+            {{ dynamicTableComment  }}      
            
         {%endif%}
 
@@ -617,7 +614,7 @@ does not permit copying or modification for any other purpose.
 
         ## Node description
         {%- if desiredState.node.description | length > 0 %} 
-            {% set dynamicTableComment = "COMMENT = " + "'" + desiredState.node.description | escape + "'" %}
+            {% set dynamicTableComment = "COMMENT = " + "'" + desiredState.node.description |escape + "'" %}
         {% endif %}
       
         {%if currentState.node.materializationType == 'dynamic table' and desiredState.node.materializationType == 'transient dynamic table' and createTest == false %}
@@ -689,20 +686,20 @@ does not permit copying or modification for any other purpose.
             #Materialization type change from dynamic table to transient dynamic table
 
         {%if (currentState.node.name != desiredState.node.name) or (desiredState.node.location.name !=  currentState.node.location.name) or nsVariables.storageLocationTest == false%}
-             {{ stage('Clone Work node', true, "sql", "alter") }}
+             {{ stage('Clone Dimension node', true, "sql", "alter") }}
              CREATE OR REPLACE {{ keyword }} DYNAMIC TABLE {{ fullyQualifiedTargetDynamicTableName }} clone {{cfullyQualifiedTargetDynamicTableName }}
 
-             {{ stage('Swap Work node', true, "sql", "alter") }}
+             {{ stage('Swap Dimension node', true, "sql", "alter") }}
              ALTER DYNAMIC TABLE {{ fullyQualifiedTargetDynamicTableName }} SWAP WITH {{cfullyQualifiedTargetDynamicTableName}}
 
              {{ stage('Drop '+ '{{currentState.node.materializationType}}', true, "sql", "alter") }}
               DROP DYNAMIC TABLE IF EXISTS {{cfullyQualifiedTargetDynamicTableName}}
 
            {%else%}
-             {{ stage('Clone Work node', true, "sql", "alter") }}
+             {{ stage('Clone Dimension node', true, "sql", "alter") }}
              CREATE OR REPLACE {{ keyword }} DYNAMIC TABLE {{ fullyQualifiedTargetDynamicTableNamenew }} clone {{fullyQualifiedTargetDynamicTableName }}
 
-             {{ stage('Swap Work node', true, "sql", "alter") }}
+             {{ stage('Swap Dimension node', true, "sql", "alter") }}
              ALTER DYNAMIC TABLE {{ fullyQualifiedTargetDynamicTableName }} SWAP WITH {{fullyQualifiedTargetDynamicTableNamenew }}
 
              {{ stage('Drop '+ '{{currentState.node.materializationType}}', true, "sql", "alter") }}
@@ -724,7 +721,7 @@ does not permit copying or modification for any other purpose.
 
                     {% if (descriptionTest == false) %}
                     {{ stage('Alter Dynamic Table', true, "sql", "alter") }}
-                       ALTER DYNAMIC TABLE {{ desiredFullyQualifiedTargetDynamicTableName }} MODIFY COLUMN {{desiredColumnName}} COMMENT '{{desiredDescription | escape}}'
+                       ALTER DYNAMIC TABLE {{ desiredFullyQualifiedTargetDynamicTableName }} MODIFY COLUMN {{desiredColumnName}} COMMENT '{{desiredDescription | escape }}'
                     {% endif %}
 
                 {%endif%}    
@@ -745,7 +742,7 @@ does not permit copying or modification for any other purpose.
                  ALTER DYNAMIC TABLE {{fullyQualifiedTargetDynamicTableName }} SET
                  {{ dynamicTableWarehouse }}
                  {{ dynamicTableLagSpecification }}
-                 {{ dynamicTableComment}}
+                 {{ dynamicTableComment }}
         
               
              {%endif%}
@@ -764,7 +761,7 @@ does not permit copying or modification for any other purpose.
                 {{ stage('Drop ' + currentState.node.materializationType + ' ' + ref_no_link(currentState.node. location.name, currentState.node.name), true, "sql", "alter") }}
                 DROP DYNAMIC TABLE IF EXISTS {{ ref_no_link(currentState.node.location.name, currentState.node.name) }}
 
-                {{ stage('Create Work '+ '{{ desiredState.node.materializationType }}', true, "sql", "alter") }}
+                {{ stage('Create Dimension '+ '{{ desiredState.node.materializationType }}', true, "sql", "alter") }}
                CREATE OR REPLACE {{ keyword }} DYNAMIC TABLE {{ fullyQualifiedTargetDynamicTableName }}
                 TARGET_LAG = '{{ dynamicTableLagSpecification }}'
                 WAREHOUSE = {{dynamicTableWarehouse}}
@@ -780,14 +777,14 @@ does not permit copying or modification for any other purpose.
            )
           AS
             {% for source in desiredState.sources %}
-              SELECT {% if desiredState.config.selectDistinct %} DISTINCT {% endif %}
+              SELECT               
                {% for col in source.columns %}
                 {{ get_source_transform(col) }} AS "{{ col.name }}"
                 {%- if not loop.last -%}, {% endif %}
                {% endfor %}
 
               {{ source.join }}
-               {% if desiredState.config.groupByAll %} GROUP BY ALL {% endif %}
+               
               {% if not loop.last %}
                 {% if desiredState.config.insertStrategy in ['UNION', 'UNION ALL'] %}
                     {{ desiredState.config.insertStrategy }}
@@ -809,15 +806,13 @@ does not permit copying or modification for any other purpose.
 
             {%endif%}
 
-
+    
     
     {% endif %}
 
    {%elif  desiredState.node.materializationType == 'iceberg dynamic table' %}
-
        {# Materialization type #}
 		{% set keyword = 'ICEBERG'  %}
-
         {# Figure out cluster key #}
         {% set nsVariables = namespace(finalClusterKey="") %}
         {% if desiredState.config.clusterKey == True %}
@@ -883,15 +878,15 @@ does not permit copying or modification for any other purpose.
         {% set dynamicTablerefresh = desiredState.config.refresh_mode %}
         {#Initialize option #}
         {% set dynamicTableinitialize = desiredState.config.initialize %}
-        {# External Volume option #}
+        {#External Volume option #}
         {% set dynamicTableexternalVolume = desiredState.config.externalVolume %}
-        {# Base Location option #}
+        {#Base Location option#}
         {% set dynamicTablebaseLocation = desiredState.config.baseLocation %}
         {# Node description #}
         {%- if desiredState.node.description | length > 0 %} 
             {% set dynamicTableComment = "COMMENT = " + "'" + desiredState.node.description |escape + "'" %}
         {% endif %}
-
+		
          {%- if currentState!=undefined %} 
 		 {%- if  (currentState.node.materializationType == 'dynamic table' or currentState.node.materializationType == 'transient dynamic table')%} 
            {% set currentTargetDynamicTableDatabase = ref_no_link(currentState.node.location.name, currentState.node.name).split('.')[0] %} 
@@ -901,20 +896,19 @@ does not permit copying or modification for any other purpose.
             DROP DYNAMIC TABLE IF EXISTS {{ fullyQualifiedTargetDynamicTableName }}        
 		 {% endif %}        
          {% endif %}
-
-
-		{% if nsVariables.storageLocationTest == false or 
+		 
+        {% if nsVariables.storageLocationTest == false or 
              nodeNameTest == false  %}
              
-             {# Current Dynamic Table Name #}
+             {# Current Dynamic Table Name  #}
 
            {% set currentTargetDynamicTableDatabase = ref_no_link(currentState.node.location.name, currentState.node.name).split('.')[0] %} 
            {% set currentTargetDynamicTableSchema = ref_no_link(currentState.node.location.name, currentState.node.name).split('.')[1] %} 
            {% set currentFullyQualifiedTargetDynamicTableName = ref_no_link(currentState.node.location.name, currentState.node.name) %}
-           {{ stage('Drop Dynamic Table at old location/name', true, "sql", "alter") }}
-            DROP DYNAMIC TABLE IF EXISTS {{ fullyQualifiedTargetDynamicTableName }}
+
+                {{ stage('Drop Dynamic Table at old location/name', true, "sql", "alter") }}
+                  DROP DYNAMIC ICEBERG TABLE IF EXISTS {{currentFullyQualifiedTargetDynamicTableName}}
         {%endif%}
-		
 
         {{ stage('Create Work '+ '{{ desiredState.node.materializationType }}', true, "sql", "create") }}
 
@@ -928,10 +922,10 @@ does not permit copying or modification for any other purpose.
 			CATALOG = 'SNOWFLAKE'
 			BASE_LOCATION = {{dynamicTablebaseLocation}}
 			
-            {{ dynamicTableComment  }}
+            {{ dynamicTableComment }}
         (
             {% for col in desiredState.columns %}
-                "{{ col.name }}"
+                "{{ col.name }}" {{icebergcoldatatype( col.dataType)}} 
                 {%- if col.description | length > 0 %} COMMENT '{{ col.description | escape }}'{% endif %}
                 {%- if not loop.last -%}, {% endif %}
             {% endfor %}
@@ -953,17 +947,16 @@ does not permit copying or modification for any other purpose.
                 {% endif %}
             {% endif %}
         {% endfor %}
-   {% endif %}      
-{% elif currentState != undefined and desiredState == undefined %}
+   {% endif %}        
+{%elif  currentState != undefined and desiredState == undefined%}
 
-    {# Dynamic Table Name #}
-    {% set targetDynamicTableDatabase = ref_no_link(currentState.node.location.name, currentState.node.name).split('.')[0] %} 
-    {% set targetDynamicTableSchema = ref_no_link(currentState.node.location.name, currentState.node.name).split('.')[1] %} 
-    {% set fullyQualifiedTargetDynamicTableName = ref_no_link(currentState.node.location.name, currentState.node.name) %}
-
-    {{ stage('Drop ' + '{{currentState.node.materializationType}}', true, "sql", "drop") }}
-    DROP DYNAMIC TABLE IF EXISTS {{ fullyQualifiedTargetDynamicTableName }}
-
+    {# Table or View Name #}
+    {% set targetObjectDatabase = ref_no_link(currentState.node.location.name, currentState.node.name).split('.')[0] %} 
+    {% set targetObjectSchema = ref_no_link(currentState.node.location.name, currentState.node.name).split('.')[1] %} 
+    {% set fullyQualifiedTargetObjectName = ref_no_link(currentState.node.location.name, currentState.node.name) %}
+           
+        {{ stage('Drop iceberg dynamic table', true, "sql", "drop") }}
+         DROP DYNAMIC TABLE IF EXISTS {{ fullyQualifiedTargetObjectName }}
 
 
 {% endif %}
