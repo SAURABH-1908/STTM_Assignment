@@ -1,0 +1,135 @@
+fileVersion: 1
+id: c55400c6-2ba7-4307-9997-732a450a88bc
+name: STG_NATION
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: Nation data as defined by TPC-H
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2fdcaa73-c542-4563-b52e-5130d23a3845
+          stepCounter: c55400c6-2ba7-4307-9997-732a450a88bc
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: N_NATIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 36f396be-400b-4dd0-93e2-93fe7aafe576
+                stepCounter: 99b977c3-93d6-4b4d-9006-a18ab8632fb1
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 607c39f3-f8fc-46ed-bec9-d715d6bfd906
+          stepCounter: c55400c6-2ba7-4307-9997-732a450a88bc
+        config: {}
+        dataType: VARCHAR(25)
+        description: ""
+        name: N_NAME
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: eb072a56-0cff-4030-92a4-2d4878a55cce
+                stepCounter: 99b977c3-93d6-4b4d-9006-a18ab8632fb1
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bbc940a6-29f8-48b4-af7e-80f44a1d2cf9
+          stepCounter: c55400c6-2ba7-4307-9997-732a450a88bc
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: N_REGIONKEY
+        nullable: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1b86e189-b3eb-4087-9cbe-c790e7052065
+                stepCounter: 99b977c3-93d6-4b4d-9006-a18ab8632fb1
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 661daf17-2326-43e1-ba3b-ea036a3d4e2c
+          stepCounter: c55400c6-2ba7-4307-9997-732a450a88bc
+        config: {}
+        dataType: VARCHAR(152)
+        description: ""
+        name: N_COMMENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9d58d1b9-2824-4caa-931e-b28161fc67e9
+                stepCounter: 99b977c3-93d6-4b4d-9006-a18ab8632fb1
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 19e1e8cc-2e21-4d33-ad3b-07ef50308ddc
+          stepCounter: c55400c6-2ba7-4307-9997-732a450a88bc
+        config: {}
+        dataType: timestamp
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: new_timestamp_col
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: CURRENT_TIMESTAMP()
+        systemColumnType: None
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5e1c2c30-b81d-45d6-a4aa-3d7dc4ab231a
+          stepCounter: c55400c6-2ba7-4307-9997-732a450a88bc
+        config: {}
+        dataType: time
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: new_time_col
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: CURRENT_TIME()
+        systemColumnType: None
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: NATION
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'NATION') }} "NATION"
+        name: STG_NATION
+        noLinkRefs: []
+  name: STG_NATION
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
