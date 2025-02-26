@@ -1,0 +1,11 @@
+fileVersion: 1
+id: "54"
+mappingDefinitions:
+  SOURCE:
+    database: SP
+    schema: SOURCE_DATA
+  WORK:
+    database: TESTING
+    schema: WORKTEST
+name: Testing_4
+type: Environment
