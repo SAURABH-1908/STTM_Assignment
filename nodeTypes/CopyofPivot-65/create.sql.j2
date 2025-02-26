@@ -12,12 +12,9 @@ does not permit copying or modification for any other purpose.
 {#Release date:20250116 Version:2.0.1 Released By:AS  Description: Fix for insert query failure #}
 {#Release date:20250122 Version:3.0.0 Released By:AS  Description: Deployment and Redeployment changes for Pivot node #}
 
-{% if desiredState == currentState %}
 
-{{ stage('Nothing to do.') }}
-select 1 = 0
 
-{% elif desiredState == undefined %}
+{% if desiredState == undefined %}
 
     {# Table or View Name #}
     {% set targetObjectDatabase = ref_no_link(currentState.node.location.name, currentState.node.name).split('.')[0] %} 
@@ -371,9 +368,5 @@ select 1 = 0
          {%endif%}    
       {%endif%}
 
-{%- else -%}
-
-{{ stage('Nothing to do.') }}
-select 1 = 0
 
 {% endif %}

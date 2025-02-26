@@ -9,12 +9,9 @@ does not permit copying or modification for any other purpose.
 {# == Node Type Name           : Date Dimension  == #}
 {# == Node Type Description    : This node creates Date table,view and also override create sql for view with advanced deployment strategy and loads the date records == #}
 
-{% if desiredState == currentState %}
 
-{{ stage('Nothing to do.') }}
-select 1 = 0
 
-{% elif desiredState %}
+{% if desiredState %}
 
     {% if  desiredState.node.override.create.enabled and desiredState.node.materializationType == 'view' %}
 
@@ -415,9 +412,6 @@ select 1 = 0
 
     {% endif %}
 
-{%- else -%}
 
-{{ stage('Nothing to do.') }}
-select 1 = 0
 
 {% endif %}

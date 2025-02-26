@@ -1,0 +1,87 @@
+fileVersion: 1
+id: 8f31569e-9e93-4920-8833-f8dd3ac75ef5
+name: MR_STOCK_PRICE_HISTORY_2
+operation:
+  config:
+    afterMatchSkip: ""
+    allRowsPerMatch: ""
+    inferMatchRecognize: false
+    orderBy:
+      items:
+        - {}
+    partitionBy:
+      items:
+        - {}
+    pattern: REGEX
+    rowsPerMatch: ""
+    selectOrderBy:
+      items:
+        - {}
+    tabDefine:
+      items:
+        - valDefineColumnName: PRICE
+          valDefineExpression: AVG
+    tabMeasures:
+      items:
+        - valAliasExpressionColumnName: price_date
+          valMeasureColumnName: PRICE_DATE
+          valMeasureExpression: COUNT
+    tabSelectFunction:
+      items:
+        - {}
+    testsEnabled: false
+    to: ""
+    toggleOrderBy: false
+    togglePartitionBy: false
+    toggleSelectFunction: false
+    toggleSelectOrderBy: false
+    truncateBefore: true
+    varAfterMatchSkip: ""
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e45a331d-eca8-4ba8-b2dc-ddeb1a814bbb
+          stepCounter: 8f31569e-9e93-4920-8833-f8dd3ac75ef5
+        config: {}
+        dataType: NUMBER(18,0)
+        defaultValue: ""
+        description: ""
+        name: PRICE_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: STOCK_PRICE_HISTORY
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'STOCK_PRICE_HISTORY') }} "STOCK_PRICE_HISTORY"
+        name: MR_STOCK_PRICE_HISTORY_2
+        noLinkRefs: []
+  name: MR_STOCK_PRICE_HISTORY_2
+  overrideSQL: false
+  schema: ""
+  sqlType: "66"
+  type: sql
+  version: 1
+type: Node
