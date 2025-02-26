@@ -1,0 +1,112 @@
+fileVersion: 1
+id: 2dd849e2-96fc-4e5f-9a69-3c22d45764ad
+name: UPVT_MONTHLY_SALES_UNPIVOT_NEW_1
+operation:
+  config:
+    includenull: true
+    inferunpivot: false
+    nameColTextBox: MONTH
+    tabValueColumn:
+      items:
+        - ColTextBox: JAN
+        - ColTextBox: FEB
+        - ColTextBox: MAR
+        - ColTextBox: APR
+    testsEnabled: false
+    truncateBefore: true
+    valColTextBox: SALES
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8760de28-65f7-4c90-a186-c7ce70c0deca
+          stepCounter: 2dd849e2-96fc-4e5f-9a69-3c22d45764ad
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: EMPID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d73240ed-8167-4e56-b281-a3645b5c957c
+                stepCounter: 97b59bfc-8faa-4afd-860b-6865b8b7bcf9
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: b9ef40a4-8deb-4541-92a7-1037a2cdcdcd
+          stepCounter: 2dd849e2-96fc-4e5f-9a69-3c22d45764ad
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: DEPT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 61975274-b517-407a-b043-9e93fe15166f
+                stepCounter: 97b59bfc-8faa-4afd-860b-6865b8b7bcf9
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 86c9eec1-efd5-465b-acb1-5f2a9136f881
+          stepCounter: 2dd849e2-96fc-4e5f-9a69-3c22d45764ad
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: MONTH
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 92b378ff-e449-4e95-91ac-027361c6aad9
+          stepCounter: 2dd849e2-96fc-4e5f-9a69-3c22d45764ad
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: SALES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: MONTHLY_SALES_UNPIVOT
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'MONTHLY_SALES_UNPIVOT') }} "MONTHLY_SALES_UNPIVOT"
+        name: UPVT_MONTHLY_SALES_UNPIVOT_NEW_1
+        noLinkRefs: []
+  name: UPVT_MONTHLY_SALES_UNPIVOT_NEW_1
+  overrideSQL: false
+  schema: ""
+  sqlType: "58"
+  type: sql
+  version: 1
+type: Node
