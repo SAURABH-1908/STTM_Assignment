@@ -5,7 +5,7 @@ operation:
   config:
     afterMatchSkip: ""
     allRowsPerMatch: ""
-    inferMatchRecognize: true
+    inferMatchRecognize: false
     orderBy:
       items:
         - {}
@@ -46,48 +46,25 @@ operation:
   metadata:
     appliedNodeTests: []
     columns:
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 9790b658-dbdd-4645-b852-7d262647806b
-          stepCounter: 0cd3667e-63c4-4978-a496-774b017f544a
-        config: {}
-        dataType: VARCHAR(16777216)
-        description: ""
-        name: COMPANY
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 8ce2694f-1834-47fb-8695-d915beff7362
-                stepCounter: e986b59c-46f1-414f-97ce-f66e8c97abc9
-            transform: ""
-      - appliedColumnTests: {}
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
         columnReference:
           columnCounter: 490fb2de-bab6-43da-9380-84faf2789804
           stepCounter: 0cd3667e-63c4-4978-a496-774b017f544a
         config: {}
-        dataType: DATE
+        dataType: NUMBER(18,0)
+        defaultValue: ""
         description: ""
         name: PRICE_DATE
         nullable: true
+        primaryKey: false
         sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: ccc72d18-e5c4-4464-b469-775ee26cc1c3
-                stepCounter: e986b59c-46f1-414f-97ce-f66e8c97abc9
+          - columnReferences: []
             transform: ""
-      - appliedColumnTests: {}
-        columnReference:
-          columnCounter: 85a1eb9f-7e68-4544-9bbb-6eaa13df5f71
-          stepCounter: 0cd3667e-63c4-4978-a496-774b017f544a
-        config: {}
-        dataType: NUMBER(38,0)
-        description: ""
-        name: PRICE
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: eae4080f-2857-49e2-9bb8-6f27c14cd05b
-                stepCounter: e986b59c-46f1-414f-97ce-f66e8c97abc9
-            transform: ""
+        transform: ""
+        uniqueKey: false
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
