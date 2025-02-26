@@ -6,6 +6,6 @@ mappingDefinitions:
     schema: WORKDEV_FUNCTIONAL
   WORK:
     database: TESTING
-    schema: TESTING
+    schema: WORKTEST
 name: testing_3
 type: Environment
