@@ -1,0 +1,96 @@
+fileVersion: 1
+id: dbeaf0d1-37a0-4dfb-825e-f7e9b6d9a4c4
+name: QUARTERLY_SALES
+operation:
+  database: ""
+  dataset: ""
+  deployEnabled: true
+  description: ""
+  locationName: SOURCE
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e8467236-5deb-4ce4-8824-794b4d38f91e
+          stepCounter: dbeaf0d1-37a0-4dfb-825e-f7e9b6d9a4c4
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: EMPID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a0f0edc0-5991-4d3e-bcc9-b9f624501df4
+          stepCounter: dbeaf0d1-37a0-4dfb-825e-f7e9b6d9a4c4
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: AMOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 151d66a5-2d87-40bb-ace5-9c6344aff6e1
+          stepCounter: dbeaf0d1-37a0-4dfb-825e-f7e9b6d9a4c4
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: QUARTER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3295c01b-690b-4154-9c98-00ae1c982aa0
+          stepCounter: dbeaf0d1-37a0-4dfb-825e-f7e9b6d9a4c4
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: DISCOUNT_PERCENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    join:
+      joinCondition: FROM {{ ref('SOURCE', 'QUARTERLY_SALES') }}
+  name: QUARTERLY_SALES
+  schema: ""
+  sqlType: Source
+  table: QUARTERLY_SALES
+  type: sourceInput
+  version: 1
+type: Node

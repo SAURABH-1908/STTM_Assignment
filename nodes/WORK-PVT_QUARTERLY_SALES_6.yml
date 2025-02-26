@@ -1,0 +1,125 @@
+fileVersion: 1
+id: c66022ea-1224-4b63-b39e-db1eb41b6594
+name: PVT_QUARTERLY_SALES_6
+operation:
+  config:
+    Colvol1: "'2023_Q1','2023_Q2'"
+    aggfunc:
+      items:
+        - {}
+    aggfunc1:
+      items:
+        - funcname1: AVG
+    defaultval: ""
+    defvalue: false
+    excolval: false
+    exlcol:
+      items:
+        - {}
+    inferPivot: false
+    samKeyColval: false
+    sincol: true
+    subqueryval1: ""
+    tabKeyColumn:
+      items:
+        - keyColTextBox: QUARTER
+    tabValueColumn:
+      items:
+        - valColTextBox: AMOUNT
+    testsEnabled: false
+    trunc: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 48e0af62-9c77-473c-ae63-ac1568621652
+          stepCounter: c66022ea-1224-4b63-b39e-db1eb41b6594
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: EMPID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e8467236-5deb-4ce4-8824-794b4d38f91e
+                stepCounter: dbeaf0d1-37a0-4dfb-825e-f7e9b6d9a4c4
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: bd32748e-4484-42ae-9db9-2e785669688c
+          stepCounter: c66022ea-1224-4b63-b39e-db1eb41b6594
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: DISCOUNT_PERCENT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3295c01b-690b-4154-9c98-00ae1c982aa0
+                stepCounter: dbeaf0d1-37a0-4dfb-825e-f7e9b6d9a4c4
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 59706b77-15d5-48a3-a0ee-8950ea51383a
+          stepCounter: c66022ea-1224-4b63-b39e-db1eb41b6594
+        config: {}
+        dataType: NUMBER(38,6)
+        defaultValue: ""
+        description: ""
+        name: "'2023_Q1'"
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 095a0a04-6bf1-4741-bcf9-7bc89494c4b6
+          stepCounter: c66022ea-1224-4b63-b39e-db1eb41b6594
+        config: {}
+        dataType: NUMBER(38,6)
+        defaultValue: ""
+        description: ""
+        name: "'2023_Q2'"
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: QUARTERLY_SALES
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'QUARTERLY_SALES') }} "QUARTERLY_SALES"
+        name: PVT_QUARTERLY_SALES_6
+        noLinkRefs: []
+  name: PVT_QUARTERLY_SALES_6
+  overrideSQL: false
+  schema: ""
+  sqlType: "60"
+  type: sql
+  version: 1
+type: Node

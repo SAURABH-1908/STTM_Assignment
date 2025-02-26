@@ -1,0 +1,134 @@
+fileVersion: 1
+id: 97b59bfc-8faa-4afd-860b-6865b8b7bcf9
+name: MONTHLY_SALES_UNPIVOT
+operation:
+  database: ""
+  dataset: ""
+  deployEnabled: true
+  description: ""
+  locationName: SOURCE
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d73240ed-8167-4e56-b281-a3645b5c957c
+          stepCounter: 97b59bfc-8faa-4afd-860b-6865b8b7bcf9
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: EMPID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 61975274-b517-407a-b043-9e93fe15166f
+          stepCounter: 97b59bfc-8faa-4afd-860b-6865b8b7bcf9
+        config: {}
+        dataType: VARCHAR(16777216)
+        defaultValue: ""
+        description: ""
+        name: DEPT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bfdc4ae9-aeb7-40de-a6ae-7c4258dcc5b6
+          stepCounter: 97b59bfc-8faa-4afd-860b-6865b8b7bcf9
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: JAN
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b611af91-cf89-4b35-81c1-5ed6a3add5a3
+          stepCounter: 97b59bfc-8faa-4afd-860b-6865b8b7bcf9
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: FEB
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c2077d5c-a6b6-4e87-bf02-2900b4898271
+          stepCounter: 97b59bfc-8faa-4afd-860b-6865b8b7bcf9
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: MAR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 96f5a280-2e7d-441a-870b-03d71087d635
+          stepCounter: 97b59bfc-8faa-4afd-860b-6865b8b7bcf9
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: APR
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    join:
+      joinCondition: FROM {{ ref('SOURCE', 'MONTHLY_SALES_UNPIVOT') }}
+  name: MONTHLY_SALES_UNPIVOT
+  schema: ""
+  sqlType: Source
+  table: MONTHLY_SALES_UNPIVOT
+  type: sourceInput
+  version: 1
+type: Node

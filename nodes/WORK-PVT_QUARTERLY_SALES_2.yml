@@ -1,0 +1,138 @@
+fileVersion: 1
+id: 3f2b65a9-418d-48c6-81d8-4923c6940f91
+name: PVT_QUARTERLY_SALES_2
+operation:
+  config:
+    Colvol1: "'2023_Q1','2023_Q2'"
+    aggfunc:
+      items:
+        - {}
+    aggfunc1:
+      items:
+        - {}
+    defaultval: ""
+    defvalue: false
+    excolval: false
+    exlcol:
+      items:
+        - {}
+    inferPivot: false
+    samKeyColval: true
+    sincol: false
+    subqueryval1: ""
+    tabKeyColumn:
+      items:
+        - keyColTextBox: QUARTER
+    tabValueColumn:
+      items:
+        - funcname: AVG
+          valColTextBox: AMOUNT
+        - funcname: MAX
+          valColTextBox: DISCOUNT_PERCENT
+    testsEnabled: false
+    trunc: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f038c739-13e3-4363-ae54-b6d4dec3dd7d
+          stepCounter: 3f2b65a9-418d-48c6-81d8-4923c6940f91
+        config: {}
+        dataType: NUMBER(38,12)
+        defaultValue: ""
+        description: ""
+        name: AVG_2023_Q1_AMOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d786575f-f77e-4960-b349-44212d7b61d5
+          stepCounter: 3f2b65a9-418d-48c6-81d8-4923c6940f91
+        config: {}
+        dataType: NUMBER(38,12)
+        defaultValue: ""
+        description: ""
+        name: AVG_2023_Q2_AMOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 79ed6d46-7a1a-4b03-a6c4-c3e26a0eb7df
+          stepCounter: 3f2b65a9-418d-48c6-81d8-4923c6940f91
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: MAX_2023_Q1_DISCOUNT_PERCENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 31c9a3fd-2857-476c-a623-0f21936999ff
+          stepCounter: 3f2b65a9-418d-48c6-81d8-4923c6940f91
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: MAX_2023_Q2_DISCOUNT_PERCENT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: QUARTERLY_SALES
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'QUARTERLY_SALES') }} "QUARTERLY_SALES"
+        name: PVT_QUARTERLY_SALES_2
+        noLinkRefs: []
+  name: PVT_QUARTERLY_SALES_2
+  overrideSQL: false
+  schema: ""
+  sqlType: "60"
+  type: sql
+  version: 1
+type: Node

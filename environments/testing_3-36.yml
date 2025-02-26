@@ -1,0 +1,11 @@
+fileVersion: 1
+id: "36"
+mappingDefinitions:
+  SOURCE:
+    database: SP
+    schema: WORKDEV_FUNCTIONAL
+  WORK:
+    database: TESTING
+    schema: TESTING
+name: testing_3
+type: Environment
