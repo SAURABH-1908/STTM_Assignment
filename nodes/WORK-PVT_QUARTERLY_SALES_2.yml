@@ -1,6 +1,6 @@
 fileVersion: 1
-id: 9724a51a-635d-44d6-83b5-ad5ba4bb519d
-name: PVT_QUARTERLY_SALES1
+id: 6370b0c3-d7ef-422f-bdab-55e586ce18a1
+name: PVT_QUARTERLY_SALES_2
 operation:
   config:
     Colvol1: ""
@@ -9,7 +9,7 @@ operation:
         - {}
     aggfunc1:
       items:
-        - funcname1: MAX
+        - funcname1: AVG
     defaultval: ""
     defvalue: false
     excolval: false
@@ -39,8 +39,8 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 40f95685-085f-452f-96c3-6fec6eed7e5c
-          stepCounter: 9724a51a-635d-44d6-83b5-ad5ba4bb519d
+          columnCounter: 971188d4-340a-47ab-ab1b-f29b17638a6f
+          stepCounter: 6370b0c3-d7ef-422f-bdab-55e586ce18a1
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -53,8 +53,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 15c454e7-cbc7-4cda-8ade-2911f3a3ed31
-          stepCounter: 9724a51a-635d-44d6-83b5-ad5ba4bb519d
+          columnCounter: 08f9a026-6dba-4a81-bfaa-580576f821ae
+          stepCounter: 6370b0c3-d7ef-422f-bdab-55e586ce18a1
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -70,8 +70,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: ee06186f-ea35-40df-af97-b4535a980510
-          stepCounter: 9724a51a-635d-44d6-83b5-ad5ba4bb519d
+          columnCounter: c778668f-7d41-4780-a50b-55d5c48a4ed6
+          stepCounter: 6370b0c3-d7ef-422f-bdab-55e586ce18a1
         config: {}
         dataType: NUMBER(38,6)
         defaultValue: ""
@@ -89,8 +89,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: e4b0805a-329d-4717-87d6-b6a5b8b38340
-          stepCounter: 9724a51a-635d-44d6-83b5-ad5ba4bb519d
+          columnCounter: f51ed413-8439-408e-949f-051f00a46bf5
+          stepCounter: 6370b0c3-d7ef-422f-bdab-55e586ce18a1
         config: {}
         dataType: NUMBER(38,6)
         defaultValue: ""
@@ -108,8 +108,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 4b5decf2-a57b-47b4-b5b3-ed28d07c7e35
-          stepCounter: 9724a51a-635d-44d6-83b5-ad5ba4bb519d
+          columnCounter: 090fdeaf-1083-4f26-9b5b-c1a550eebbd5
+          stepCounter: 6370b0c3-d7ef-422f-bdab-55e586ce18a1
         config: {}
         dataType: NUMBER(38,6)
         defaultValue: ""
@@ -127,8 +127,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 0d128228-f9a8-48af-9fe1-cb553eda2467
-          stepCounter: 9724a51a-635d-44d6-83b5-ad5ba4bb519d
+          columnCounter: 01ff0eb6-ef1d-49dd-bf38-1c2d98229c97
+          stepCounter: 6370b0c3-d7ef-422f-bdab-55e586ce18a1
         config: {}
         dataType: NUMBER(38,6)
         defaultValue: ""
@@ -152,9 +152,9 @@ operation:
             nodeName: QUARTERLY_SALES
         join:
           joinCondition: FROM {{ ref('SOURCE', 'QUARTERLY_SALES') }} "QUARTERLY_SALES"
-        name: PVT_QUARTERLY_SALES1
+        name: PVT_QUARTERLY_SALES_2
         noLinkRefs: []
-  name: PVT_QUARTERLY_SALES1
+  name: PVT_QUARTERLY_SALES_2
   overrideSQL: false
   schema: ""
   sqlType: "65"

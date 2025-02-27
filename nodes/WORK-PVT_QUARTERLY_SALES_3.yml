@@ -1,6 +1,6 @@
 fileVersion: 1
-id: 7bd1e078-c8b0-4d48-9ee1-f34314b9d3de
-name: PVT_QUARTERLY_SALES_new_1
+id: 9724a51a-635d-44d6-83b5-ad5ba4bb519d
+name: PVT_QUARTERLY_SALES_3
 operation:
   config:
     Colvol1: ""
@@ -39,8 +39,8 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 4fb795ce-400f-463b-8317-3d71427c07db
-          stepCounter: 7bd1e078-c8b0-4d48-9ee1-f34314b9d3de
+          columnCounter: 40f95685-085f-452f-96c3-6fec6eed7e5c
+          stepCounter: 9724a51a-635d-44d6-83b5-ad5ba4bb519d
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -53,8 +53,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: ec44df49-8262-4587-9e12-2893703f5e75
-          stepCounter: 7bd1e078-c8b0-4d48-9ee1-f34314b9d3de
+          columnCounter: 15c454e7-cbc7-4cda-8ade-2911f3a3ed31
+          stepCounter: 9724a51a-635d-44d6-83b5-ad5ba4bb519d
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -70,10 +70,10 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: c7419cd9-b233-4dee-8782-9897dfa53b12
-          stepCounter: 7bd1e078-c8b0-4d48-9ee1-f34314b9d3de
+          columnCounter: ee06186f-ea35-40df-af97-b4535a980510
+          stepCounter: 9724a51a-635d-44d6-83b5-ad5ba4bb519d
         config: {}
-        dataType: NUMBER(38,0)
+        dataType: NUMBER(38,6)
         defaultValue: ""
         description: ""
         name: "'2023_Q1'"
@@ -89,10 +89,10 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: fc44e6fe-1da2-4327-ba61-13538b77f69e
-          stepCounter: 7bd1e078-c8b0-4d48-9ee1-f34314b9d3de
+          columnCounter: e4b0805a-329d-4717-87d6-b6a5b8b38340
+          stepCounter: 9724a51a-635d-44d6-83b5-ad5ba4bb519d
         config: {}
-        dataType: NUMBER(38,0)
+        dataType: NUMBER(38,6)
         defaultValue: ""
         description: ""
         name: "'2023_Q2'"
@@ -108,10 +108,10 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 51c44d71-772a-4699-a37e-7f34a2823cc7
-          stepCounter: 7bd1e078-c8b0-4d48-9ee1-f34314b9d3de
+          columnCounter: 4b5decf2-a57b-47b4-b5b3-ed28d07c7e35
+          stepCounter: 9724a51a-635d-44d6-83b5-ad5ba4bb519d
         config: {}
-        dataType: NUMBER(38,0)
+        dataType: NUMBER(38,6)
         defaultValue: ""
         description: ""
         name: "'2023_Q3'"
@@ -127,10 +127,10 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 7a27b0c7-4e94-477c-86ff-2e7bc9ccc731
-          stepCounter: 7bd1e078-c8b0-4d48-9ee1-f34314b9d3de
+          columnCounter: 0d128228-f9a8-48af-9fe1-cb553eda2467
+          stepCounter: 9724a51a-635d-44d6-83b5-ad5ba4bb519d
         config: {}
-        dataType: NUMBER(38,0)
+        dataType: NUMBER(38,6)
         defaultValue: ""
         description: ""
         name: "'2023_Q4'"
@@ -152,9 +152,9 @@ operation:
             nodeName: QUARTERLY_SALES
         join:
           joinCondition: FROM {{ ref('SOURCE', 'QUARTERLY_SALES') }} "QUARTERLY_SALES"
-        name: PVT_QUARTERLY_SALES_new_1
+        name: PVT_QUARTERLY_SALES_3
         noLinkRefs: []
-  name: PVT_QUARTERLY_SALES_new_1
+  name: PVT_QUARTERLY_SALES_3
   overrideSQL: false
   schema: ""
   sqlType: "65"

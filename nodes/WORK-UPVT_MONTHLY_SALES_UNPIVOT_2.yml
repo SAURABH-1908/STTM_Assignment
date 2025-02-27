@@ -1,9 +1,9 @@
 fileVersion: 1
-id: b3b49a80-8560-4720-8ecf-39cc73176633
-name: UPVT_MONTHLY_SALES_UNPIVOT1
+id: 65882bf3-5fce-4f12-b3a1-af37aea120b3
+name: UPVT_MONTHLY_SALES_UNPIVOT_2
 operation:
   config:
-    includenull: true
+    includenull: false
     inferunpivot: false
     nameColTextBox: MONTH
     tabValueColumn:
@@ -26,8 +26,8 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 0330addb-fdb0-44d7-af1c-e26d9225b8d2
-          stepCounter: b3b49a80-8560-4720-8ecf-39cc73176633
+          columnCounter: 93c66173-5eae-409f-a936-52e9f5ae48fb
+          stepCounter: 65882bf3-5fce-4f12-b3a1-af37aea120b3
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -40,8 +40,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 0611b0da-1088-4018-9327-c60f7d41ef47
-          stepCounter: b3b49a80-8560-4720-8ecf-39cc73176633
+          columnCounter: 146aadb0-f5b6-48da-9b8f-ec68df8dcf9c
+          stepCounter: 65882bf3-5fce-4f12-b3a1-af37aea120b3
         config: {}
         dataType: VARCHAR(16777216)
         description: ""
@@ -57,8 +57,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 4531d62a-d8f5-4e45-8cfb-4c257641c10c
-          stepCounter: b3b49a80-8560-4720-8ecf-39cc73176633
+          columnCounter: ea6730c3-17fe-4c4a-8435-ff69b63d992a
+          stepCounter: 65882bf3-5fce-4f12-b3a1-af37aea120b3
         config: {}
         dataType: VARCHAR(16777216)
         defaultValue: ""
@@ -76,8 +76,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 88aa235d-6868-4de0-b827-d73bb4160daf
-          stepCounter: b3b49a80-8560-4720-8ecf-39cc73176633
+          columnCounter: b8451bab-e0f7-45cd-b559-fef036604022
+          stepCounter: 65882bf3-5fce-4f12-b3a1-af37aea120b3
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
@@ -101,9 +101,9 @@ operation:
             nodeName: MONTHLY_SALES_UNPIVOT
         join:
           joinCondition: FROM {{ ref('SOURCE', 'MONTHLY_SALES_UNPIVOT') }} "MONTHLY_SALES_UNPIVOT"
-        name: UPVT_MONTHLY_SALES_UNPIVOT1
+        name: UPVT_MONTHLY_SALES_UNPIVOT_2
         noLinkRefs: []
-  name: UPVT_MONTHLY_SALES_UNPIVOT1
+  name: UPVT_MONTHLY_SALES_UNPIVOT_2
   overrideSQL: false
   schema: ""
   sqlType: "63"

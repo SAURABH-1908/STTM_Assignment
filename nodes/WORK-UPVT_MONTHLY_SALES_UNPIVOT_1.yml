@@ -1,6 +1,6 @@
 fileVersion: 1
-id: 65882bf3-5fce-4f12-b3a1-af37aea120b3
-name: UPVT_MONTHLY_SALES_UNPIVOT
+id: 77749911-7db4-4406-a4a3-8f626405a9bf
+name: UPVT_MONTHLY_SALES_UNPIVOT_1
 operation:
   config:
     includenull: false
@@ -14,7 +14,7 @@ operation:
         - ColTextBox: APR
     testsEnabled: false
     truncateBefore: true
-    valColTextBox: SALES
+    valColTextBox: TOTAL_SALES
   database: ""
   deployEnabled: true
   description: ""
@@ -26,10 +26,10 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 93c66173-5eae-409f-a936-52e9f5ae48fb
-          stepCounter: 65882bf3-5fce-4f12-b3a1-af37aea120b3
+          columnCounter: 0bbb7de0-a329-400f-9b22-f7c6e9bdd0b7
+          stepCounter: 77749911-7db4-4406-a4a3-8f626405a9bf
         config: {}
-        dataType: NUMBER(40,0)
+        dataType: NUMBER(38,0)
         description: ""
         name: EMPID
         nullable: true
@@ -40,8 +40,8 @@ operation:
             transform: ""
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 146aadb0-f5b6-48da-9b8f-ec68df8dcf9c
-          stepCounter: 65882bf3-5fce-4f12-b3a1-af37aea120b3
+          columnCounter: b9e89981-9c50-4c37-abf0-e6bd01b86aff
+          stepCounter: 77749911-7db4-4406-a4a3-8f626405a9bf
         config: {}
         dataType: VARCHAR(16777216)
         description: ""
@@ -57,8 +57,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: ea6730c3-17fe-4c4a-8435-ff69b63d992a
-          stepCounter: 65882bf3-5fce-4f12-b3a1-af37aea120b3
+          columnCounter: 07c79df2-22f1-42e2-93b4-03c6132900c6
+          stepCounter: 77749911-7db4-4406-a4a3-8f626405a9bf
         config: {}
         dataType: VARCHAR(16777216)
         defaultValue: ""
@@ -76,13 +76,13 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: b8451bab-e0f7-45cd-b559-fef036604022
-          stepCounter: 65882bf3-5fce-4f12-b3a1-af37aea120b3
+          columnCounter: c2205ee0-9e60-457c-b15c-ae61615ce78a
+          stepCounter: 77749911-7db4-4406-a4a3-8f626405a9bf
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
         description: ""
-        name: SALES
+        name: TOTAL_SALES
         nullable: true
         primaryKey: false
         sourceColumnReferences:
@@ -101,9 +101,9 @@ operation:
             nodeName: MONTHLY_SALES_UNPIVOT
         join:
           joinCondition: FROM {{ ref('SOURCE', 'MONTHLY_SALES_UNPIVOT') }} "MONTHLY_SALES_UNPIVOT"
-        name: UPVT_MONTHLY_SALES_UNPIVOT
+        name: UPVT_MONTHLY_SALES_UNPIVOT_1
         noLinkRefs: []
-  name: UPVT_MONTHLY_SALES_UNPIVOT
+  name: UPVT_MONTHLY_SALES_UNPIVOT_1
   overrideSQL: false
   schema: ""
   sqlType: "63"
