@@ -26,6 +26,7 @@ operation:
     tabValueColumn:
       items:
         - valColTextBox: amount
+        - valColTextBox: discount_percent
     testsEnabled: false
     trunc: true
   database: ""
