@@ -70,7 +70,7 @@ operation:
   description: ""
   isMultisource: false
   locationName: WORK_2
-  materializationType: table
+  materializationType: transient table
   metadata:
     appliedNodeTests: []
     columns:

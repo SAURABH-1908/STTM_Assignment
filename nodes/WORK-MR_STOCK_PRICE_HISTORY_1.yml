@@ -62,7 +62,7 @@ operation:
         dataType: VARCHAR(16777216)
         description: ""
         name: COMPANY
-        nullable: true
+        nullable: false
         sourceColumnReferences:
           - columnReferences:
               - columnCounter: 4792685c-475a-4096-ab2e-6b57da8b5af0

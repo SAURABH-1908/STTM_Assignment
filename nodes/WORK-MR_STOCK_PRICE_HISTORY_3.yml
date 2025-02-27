@@ -60,7 +60,7 @@ operation:
           stepCounter: ec8d8fdd-1bbf-46e4-b909-5ab152da45dd
         config: {}
         dataType: VARCHAR(16777216)
-        description: COMPANY_NAME
+        description: ""
         name: COMPANY
         nullable: true
         sourceColumnReferences:
