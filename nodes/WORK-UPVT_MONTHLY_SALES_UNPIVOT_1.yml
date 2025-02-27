@@ -20,7 +20,7 @@ operation:
   description: the unpivot data
   isMultisource: false
   locationName: WORK
-  materializationType: table
+  materializationType: transient table
   metadata:
     appliedNodeTests: []
     columns:
