@@ -1,42 +1,70 @@
 fileVersion: 1
-id: 8f31569e-9e93-4920-8833-f8dd3ac75ef5
+id: f099c0d2-cc2b-4110-9b73-3990404bdc26
 name: MR_STOCK_PRICE_HISTORY_2
 operation:
   config:
-    afterMatchSkip: ""
+    afterMatchSkip: TO
     allRowsPerMatch: ""
     inferMatchRecognize: false
     orderBy:
       items:
-        - {}
+        - orderByCol:
+            columnCounter: d148eae4-bd62-4838-9229-2ad8b6f2ba6b
+            stepCounter: f099c0d2-cc2b-4110-9b73-3990404bdc26
+          orderByTextBox: PRICE_DATE
     partitionBy:
       items:
-        - {}
-    pattern: REGEX
-    rowsPerMatch: ""
+        - partitionByCol:
+            columnCounter: e96c7562-1424-4ff5-b3e8-bd82723d5b30
+            stepCounter: f099c0d2-cc2b-4110-9b73-3990404bdc26
+          partitionByColTextBox: COMPANY
+    pattern: "ROW_BEFORE_DECREASE ROW_WITH_PRICE_DECREASE + ROW_WITH_PRICE_INCREASE + "
+    rowsPerMatch: ONE ROW PER MATCH
     selectOrderBy:
       items:
-        - {}
+        - selectOrderByCol:
+            columnCounter: e96c7562-1424-4ff5-b3e8-bd82723d5b30
+            stepCounter: f099c0d2-cc2b-4110-9b73-3990404bdc26
+          selectOrderByTextBox: null
+        - selectOrderByCol: null
+          selectOrderByTextBox: MATCH_NUMBER
     tabDefine:
       items:
-        - valDefineColumnName: PRICE
-          valDefineExpression: AVG
+        - valDefineColumnName: ROW_WITH_PRICE_DECREASE
+          valDefineExpression: PRICE<LAG(PRICE)
+        - valDefineColumnName: ROW_WITH_PRICE_INCREASE
+          valDefineExpression: PRICE>LAG(PRICE)
     tabMeasures:
       items:
-        - valAliasExpressionColumnName: price_date
+        - valAliasExpressionColumnName: MATCH_NUMBER
+          valMeasureColumnName: null
+          valMeasureExpression: MATCH_NUMBER
+        - valAliasExpressionColumnName: START_DATE
           valMeasureColumnName: PRICE_DATE
+          valMeasureExpression: FIRST
+        - valAliasExpressionColumnName: END_DATE
+          valMeasureColumnName: PRICE_DATE
+          valMeasureExpression: LAST
+        - valAliasExpressionColumnName: ROWS_IN_SEQUENCE
+          valMeasureColumnName: "*"
+          valMeasureExpression: COUNT
+        - valAliasExpressionColumnName: NUM_DECREASES
+          valMeasureColumnName: ROW_WITH_PRICE_DECREASE.*
+          valMeasureExpression: COUNT
+        - valAliasExpressionColumnName: NUM_INCREASES
+          valMeasureColumnName: ROW_WITH_PRICE_INCREASE.*
           valMeasureExpression: COUNT
     tabSelectFunction:
       items:
         - {}
     testsEnabled: false
-    to: ""
-    toggleOrderBy: false
-    togglePartitionBy: false
+    to: LAST
+    toggleOrderBy: true
+    togglePartitionBy: true
     toggleSelectFunction: false
-    toggleSelectOrderBy: false
+    toggleSelectOrderBy: true
     truncateBefore: true
-    varAfterMatchSkip: ""
+    varAfterMatchSkip: ROW_WITH_PRICE_INCREASE
   database: ""
   deployEnabled: true
   description: ""
@@ -46,18 +74,127 @@ operation:
   metadata:
     appliedNodeTests: []
     columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: e96c7562-1424-4ff5-b3e8-bd82723d5b30
+          stepCounter: f099c0d2-cc2b-4110-9b73-3990404bdc26
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: COMPANY_NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4792685c-475a-4096-ab2e-6b57da8b5af0
+                stepCounter: add264f4-0962-4ccb-8541-b875941d0c7b
+            transform: ""
       - acceptedValues:
           strictMatch: true
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: e45a331d-eca8-4ba8-b2dc-ddeb1a814bbb
-          stepCounter: 8f31569e-9e93-4920-8833-f8dd3ac75ef5
+          columnCounter: 99804f50-1a04-4e2d-96cc-5c98a6336d5d
+          stepCounter: f099c0d2-cc2b-4110-9b73-3990404bdc26
         config: {}
         dataType: NUMBER(18,0)
         defaultValue: ""
         description: ""
-        name: PRICE_DATE
+        name: MATCH_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d0cbbbe0-f838-4c58-ab08-fc8cbcf2c500
+          stepCounter: f099c0d2-cc2b-4110-9b73-3990404bdc26
+        config: {}
+        dataType: DATE
+        defaultValue: ""
+        description: ""
+        name: START_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b992eafb-cc59-4ade-9b1f-d592729c8ff6
+          stepCounter: f099c0d2-cc2b-4110-9b73-3990404bdc26
+        config: {}
+        dataType: DATE
+        defaultValue: ""
+        description: ""
+        name: END_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 31bed703-ae8c-44f9-a1eb-c33df11f0763
+          stepCounter: f099c0d2-cc2b-4110-9b73-3990404bdc26
+        config: {}
+        dataType: NUMBER(18,0)
+        defaultValue: ""
+        description: ""
+        name: ROWS_IN_SEQUENCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1e64f1ee-7640-45d2-b070-bcdf266962eb
+          stepCounter: f099c0d2-cc2b-4110-9b73-3990404bdc26
+        config: {}
+        dataType: NUMBER(18,0)
+        defaultValue: ""
+        description: ""
+        name: NUM_DECREASES
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 063e36b2-987a-4b27-b9a1-e507d531a74f
+          stepCounter: f099c0d2-cc2b-4110-9b73-3990404bdc26
+        config: {}
+        dataType: NUMBER(18,0)
+        defaultValue: ""
+        description: ""
+        name: NUM_INCREASES
         nullable: true
         primaryKey: false
         sourceColumnReferences:

@@ -1,0 +1,157 @@
+fileVersion: 1
+id: eddd094f-cce9-4dc7-a437-23cbdecc7ffa
+name: MR_STOCK_PRICE_HISTORY_1
+operation:
+  config:
+    afterMatchSkip: PAST LAST ROW
+    allRowsPerMatch: OMIT EMPTY MATCHES
+    inferMatchRecognize: false
+    orderBy:
+      items:
+        - orderByCol:
+            columnCounter: 0b0b1454-c61c-47ce-b162-d76e55e4654d
+            stepCounter: eddd094f-cce9-4dc7-a437-23cbdecc7ffa
+          orderByTextBox: PRICE_DATE
+    partitionBy:
+      items:
+        - partitionByCol:
+            columnCounter: 1085fa35-e401-4868-b921-c1fb4cc9c944
+            stepCounter: eddd094f-cce9-4dc7-a437-23cbdecc7ffa
+          partitionByColTextBox: COMPANY_NAME
+    pattern: (OVERAVG*)
+    rowsPerMatch: ALL ROWS PER MATCH
+    selectOrderBy:
+      items:
+        - {}
+    tabDefine:
+      items:
+        - valDefineColumnName: OVERAVG
+          valDefineExpression: |-
+            PRICE>AVG(PRICE) OVER (ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED 
+            FOLLOWING)
+    tabMeasures:
+      items:
+        - valAliasExpressionColumnName: MATCH_NUMBER
+          valMeasureColumnName: null
+          valMeasureExpression: MATCH_NUMBER
+    tabSelectFunction:
+      items:
+        - {}
+    testsEnabled: false
+    to: ""
+    toggleOrderBy: true
+    togglePartitionBy: true
+    toggleSelectFunction: false
+    toggleSelectOrderBy: false
+    truncateBefore: true
+    varAfterMatchSkip: ""
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: WORK
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1085fa35-e401-4868-b921-c1fb4cc9c944
+          stepCounter: eddd094f-cce9-4dc7-a437-23cbdecc7ffa
+        config: {}
+        dataType: VARCHAR(16777216)
+        description: ""
+        name: COMPANY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4792685c-475a-4096-ab2e-6b57da8b5af0
+                stepCounter: add264f4-0962-4ccb-8541-b875941d0c7b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0b0b1454-c61c-47ce-b162-d76e55e4654d
+          stepCounter: eddd094f-cce9-4dc7-a437-23cbdecc7ffa
+        config: {}
+        dataType: DATE
+        description: ""
+        name: PRICE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6a1db6fb-4064-4c48-9775-16a7a6a27d9e
+                stepCounter: add264f4-0962-4ccb-8541-b875941d0c7b
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4bcdf365-8cd7-4dec-97fa-dfabdc8415ed
+          stepCounter: eddd094f-cce9-4dc7-a437-23cbdecc7ffa
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: PRICE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0e61cd4f-f117-4b76-8bff-8b6296db51e7
+                stepCounter: add264f4-0962-4ccb-8541-b875941d0c7b
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d22c2c8-f3aa-4d9c-82c4-e032b3133fbe
+          stepCounter: eddd094f-cce9-4dc7-a437-23cbdecc7ffa
+        config: {}
+        dataType: NUMBER(18,0)
+        defaultValue: ""
+        description: ""
+        name: MATCH_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91d8d8a0-fecd-48c6-98c9-528bce6645b1
+          stepCounter: eddd094f-cce9-4dc7-a437-23cbdecc7ffa
+        config: {}
+        dataType: NUMBER(20)
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: NEW_COL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: ""
+        systemColumnType: None
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SOURCE
+            nodeName: STOCK_PRICE_HISTORY
+        join:
+          joinCondition: FROM {{ ref('SOURCE', 'STOCK_PRICE_HISTORY') }} "STOCK_PRICE_HISTORY"
+        name: MR_STOCK_PRICE_HISTORY_1
+        noLinkRefs: []
+  name: MR_STOCK_PRICE_HISTORY_1
+  overrideSQL: false
+  schema: ""
+  sqlType: "66"
+  type: sql
+  version: 1
+type: Node
