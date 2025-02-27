@@ -1,6 +1,6 @@
 fileVersion: 1
-id: 8e932e18-c4e6-4b0d-afb8-1c5256d3bcfb
-name: PVT_QUARTERLY_SALES_4
+id: 7bd1e078-c8b0-4d48-9ee1-f34314b9d3de
+name: PVT_QUARTERLY_SALES_1
 operation:
   config:
     Colvol1: ""
@@ -9,7 +9,7 @@ operation:
         - {}
     aggfunc1:
       items:
-        - funcname1: AVG
+        - funcname1: MAX
     defaultval: ""
     defvalue: false
     excolval: false
@@ -22,29 +22,28 @@ operation:
     subqueryval1: ""
     tabKeyColumn:
       items:
-        - keyColTextBox: quarter
+        - keyColTextBox: QUARTER
     tabValueColumn:
       items:
-        - valColTextBox: amount
-        - valColTextBox: discount_percent
+        - valColTextBox: AMOUNT
     testsEnabled: false
     trunc: true
   database: ""
   deployEnabled: true
-  description: ""
+  description: The Pivot Data
   isMultisource: false
   locationName: WORK_2
-  materializationType: table
+  materializationType: transient table
   metadata:
     appliedNodeTests: []
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: a5073b59-a1a7-4214-9760-1366e685e704
-          stepCounter: 8e932e18-c4e6-4b0d-afb8-1c5256d3bcfb
+          columnCounter: 4fb795ce-400f-463b-8317-3d71427c07db
+          stepCounter: 7bd1e078-c8b0-4d48-9ee1-f34314b9d3de
         config: {}
         dataType: NUMBER(38,0)
-        description: employee_id
+        description: ""
         name: EMPID
         nullable: true
         sourceColumnReferences:
@@ -52,34 +51,29 @@ operation:
               - columnCounter: 8079aa4b-efee-454a-b63c-e839d79ce6db
                 stepCounter: d089b1a4-db26-409b-9226-068a7ac36e6e
             transform: ""
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
+      - appliedColumnTests: {}
         columnReference:
-          columnCounter: cc0b4740-61da-43b6-97c2-94d07459a364
-          stepCounter: 8e932e18-c4e6-4b0d-afb8-1c5256d3bcfb
+          columnCounter: ec44df49-8262-4587-9e12-2893703f5e75
+          stepCounter: 7bd1e078-c8b0-4d48-9ee1-f34314b9d3de
         config: {}
         dataType: NUMBER(38,0)
-        defaultValue: ""
         description: ""
         name: DISCOUNT_PERCENT
         nullable: true
-        primaryKey: false
         sourceColumnReferences:
-          - columnReferences: []
+          - columnReferences:
+              - columnCounter: 3c266a1d-8b2c-4d17-b9b5-d2a7ef7a2760
+                stepCounter: d089b1a4-db26-409b-9226-068a7ac36e6e
             transform: ""
-        transform: ""
-        uniqueKey: false
       - acceptedValues:
           strictMatch: true
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 24ba21ed-6b35-40bd-91d1-92e9547eaea3
-          stepCounter: 8e932e18-c4e6-4b0d-afb8-1c5256d3bcfb
+          columnCounter: c7419cd9-b233-4dee-8782-9897dfa53b12
+          stepCounter: 7bd1e078-c8b0-4d48-9ee1-f34314b9d3de
         config: {}
-        dataType: NUMBER(38,6)
+        dataType: NUMBER(38,0)
         defaultValue: ""
         description: ""
         name: "'2023_Q1'"
@@ -95,10 +89,10 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: d2f62063-48c5-459a-bc33-902a9434d984
-          stepCounter: 8e932e18-c4e6-4b0d-afb8-1c5256d3bcfb
+          columnCounter: fc44e6fe-1da2-4327-ba61-13538b77f69e
+          stepCounter: 7bd1e078-c8b0-4d48-9ee1-f34314b9d3de
         config: {}
-        dataType: NUMBER(38,6)
+        dataType: NUMBER(38,0)
         defaultValue: ""
         description: ""
         name: "'2023_Q2'"
@@ -114,13 +108,32 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: bf0c01a9-baf1-460f-8a7b-26c7312da602
-          stepCounter: 8e932e18-c4e6-4b0d-afb8-1c5256d3bcfb
+          columnCounter: 51c44d71-772a-4699-a37e-7f34a2823cc7
+          stepCounter: 7bd1e078-c8b0-4d48-9ee1-f34314b9d3de
         config: {}
-        dataType: NUMBER(38,6)
+        dataType: NUMBER(38,0)
         defaultValue: ""
         description: ""
         name: "'2023_Q3'"
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7a27b0c7-4e94-477c-86ff-2e7bc9ccc731
+          stepCounter: 7bd1e078-c8b0-4d48-9ee1-f34314b9d3de
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: "'2023_Q5'"
         nullable: true
         primaryKey: false
         sourceColumnReferences:
@@ -139,9 +152,9 @@ operation:
             nodeName: QUARTERLY_SALES
         join:
           joinCondition: FROM {{ ref('SOURCE', 'QUARTERLY_SALES') }} "QUARTERLY_SALES"
-        name: PVT_QUARTERLY_SALES_4
+        name: PVT_QUARTERLY_SALES_1
         noLinkRefs: []
-  name: PVT_QUARTERLY_SALES_4
+  name: PVT_QUARTERLY_SALES_1
   overrideSQL: false
   schema: ""
   sqlType: "65"
