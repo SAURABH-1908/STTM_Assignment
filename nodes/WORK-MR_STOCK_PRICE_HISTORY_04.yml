@@ -47,7 +47,7 @@ operation:
     varAfterMatchSkip: ""
   database: ""
   deployEnabled: true
-  description: ""
+  description: STOCK_PREDICTION
   isMultisource: false
   locationName: WORK
   materializationType: table
