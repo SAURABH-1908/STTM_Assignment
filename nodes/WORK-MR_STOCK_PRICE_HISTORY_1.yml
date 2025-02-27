@@ -115,26 +115,6 @@ operation:
             transform: ""
         transform: ""
         uniqueKey: false
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: 91d8d8a0-fecd-48c6-98c9-528bce6645b1
-          stepCounter: eddd094f-cce9-4dc7-a437-23cbdecc7ffa
-        config: {}
-        dataType: NUMBER(20)
-        defaultValue: ""
-        description: ""
-        keyColumnType: None
-        name: NEW_COL
-        nullable: true
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: "0"
-                stepCounter: "0"
-            transform: ""
-        systemColumnType: None
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:

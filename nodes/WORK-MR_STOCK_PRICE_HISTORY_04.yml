@@ -1,6 +1,6 @@
 fileVersion: 1
 id: 7aa7f055-2838-4ae3-8163-835150dede83
-name: MR_STOCK_PRICE_HISTORY_4
+name: MR_STOCK_PRICE_HISTORY_04
 operation:
   config:
     afterMatchSkip: PAST LAST ROW
@@ -126,9 +126,9 @@ operation:
             nodeName: STOCK_PRICE_HISTORY
         join:
           joinCondition: FROM {{ ref('SOURCE', 'STOCK_PRICE_HISTORY') }} "STOCK_PRICE_HISTORY"
-        name: MR_STOCK_PRICE_HISTORY_4
+        name: MR_STOCK_PRICE_HISTORY_04
         noLinkRefs: []
-  name: MR_STOCK_PRICE_HISTORY_4
+  name: MR_STOCK_PRICE_HISTORY_04
   overrideSQL: false
   schema: ""
   sqlType: "66"

@@ -81,7 +81,7 @@ operation:
         config: {}
         dataType: VARCHAR(16777216)
         description: ""
-        name: COMPANY_NAME
+        name: COMPANY
         nullable: true
         sourceColumnReferences:
           - columnReferences:
