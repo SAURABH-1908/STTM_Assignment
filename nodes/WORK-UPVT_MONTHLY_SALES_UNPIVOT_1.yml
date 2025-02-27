@@ -17,7 +17,7 @@ operation:
     valColTextBox: SALES
   database: ""
   deployEnabled: true
-  description: ""
+  description: the unpivot data
   isMultisource: false
   locationName: WORK
   materializationType: table

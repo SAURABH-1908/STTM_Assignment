@@ -32,7 +32,7 @@ operation:
         dataType: NUMBER(38,0)
         description: ""
         name: EMPID
-        nullable: true
+        nullable: false
         sourceColumnReferences:
           - columnReferences:
               - columnCounter: 0bf20d98-bbb8-4e4d-a953-31e8a7c706da

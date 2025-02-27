@@ -30,7 +30,7 @@ operation:
     trunc: true
   database: ""
   deployEnabled: true
-  description: ""
+  description: The Pivot Data
   isMultisource: false
   locationName: WORK
   materializationType: table
