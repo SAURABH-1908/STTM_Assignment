@@ -90,6 +90,26 @@ operation:
             transform: ""
         transform: ""
         uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 089076c4-9e59-47f0-9368-16234b235ecb
+          stepCounter: 65882bf3-5fce-4f12-b3a1-af37aea120b3
+        config: {}
+        dataType: NUMBER(10)
+        defaultValue: ""
+        description: ""
+        keyColumnType: None
+        name: NEW_COL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: "0"
+                stepCounter: "0"
+            transform: ""
+        systemColumnType: None
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
