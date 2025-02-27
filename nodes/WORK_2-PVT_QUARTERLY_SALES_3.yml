@@ -35,7 +35,7 @@ operation:
   deployEnabled: true
   description: ""
   isMultisource: false
-  locationName: WORK
+  locationName: WORK_2
   materializationType: table
   metadata:
     appliedNodeTests: []
